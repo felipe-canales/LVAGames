@@ -3,14 +3,13 @@
 [ext_resource path="res://temp_assets/icon.png" type="Texture" id=1]
 [ext_resource path="res://nodos/Player.gd" type="Script" id=2]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 16, 16 )
+[sub_resource type="ConvexPolygonShape2D" id=1]
+points = PoolVector2Array( 15, -11, 15, 11, 11, 15, -11, 15, -15, 11, -15, -11, -11, -15, 11, -15 )
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -1.19209e-06, -4.76837e-07 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
 
