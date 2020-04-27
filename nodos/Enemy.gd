@@ -10,7 +10,9 @@ var velocidad = 100
 # Distancia entre el enemigo y el player
 var distancia = 250
 
+# Por definir segun la agrupacion de nodos
 onready var player = get_parent().get_parent().get_node("Player")
+
 
 var movcont = 0
 
