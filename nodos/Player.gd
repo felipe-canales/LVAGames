@@ -38,4 +38,3 @@ func _physics_process(delta):
 	vel.x = lerp(vel.x, target_x, ACCEL)
 	vel.y = lerp(vel.y, target_y, ACCEL)
 	move_and_slide(vel)
-	

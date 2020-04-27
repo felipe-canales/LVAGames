@@ -1,12 +1,20 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://nodos/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://nodos/Enemy.tscn" type="PackedScene" id=2]
 [ext_resource path="res://temp_assets/new_tileset.tres" type="TileSet" id=3]
+[ext_resource path="res://nodos/Gun.tscn" type="PackedScene" id=4]
 
 [node name="level_test" type="Node2D"]
 position = Vector2( 200, 112 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, -4.31689 )
+
+[node name="Bullets" type="Node2D" parent="Player"]
+
+[node name="Gun" parent="Player" instance=ExtResource( 4 )]
+position = Vector2( -0.950001, -0.302 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true
@@ -14,6 +22,9 @@ limit_left = -4
 limit_top = -4
 limit_right = 1604
 limit_bottom = 772
+
+[node name="Enemy" parent="." instance=ExtResource( 2 )]
+position = Vector2( 227.287, 38.5589 )
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2( -200, -112 )
