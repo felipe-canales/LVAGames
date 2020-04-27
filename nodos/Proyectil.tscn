@@ -6,7 +6,9 @@
 [sub_resource type="CircleShape2D" id=1]
 radius = 4.9322
 
-[node name="Proyectil" type="Area2D"]
+[node name="Proyectil" type="Area2D" groups=[
+"Bullets",
+]]
 position = Vector2( 18.7309, 0.681122 )
 script = ExtResource( 2 )
 __meta__ = {

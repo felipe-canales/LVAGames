@@ -21,38 +21,37 @@ func _ready():
 
 func _physics_process(delta):
 
-	if len(enemigos) != 0:
-		
-		focus_enemy = enemigos[0]
-		for enemigo in enemigos:
-			
-			vector_distancia = enemigo.get_global_position() - get_global_position()
-			distancia = vector_distancia.length_squared()
-		
-			vector_distancia = focus_enemy.get_global_position() - get_global_position()
-			distancia1 = vector_distancia.length_squared()
-			
-			if distancia <= distancia1:
-				focus_enemy = enemigo
-		
-		if focus_enemy != null:
-			if focus_enemy.destroyed:
-				focus_enemy.queue_free()
-				enemigos.erase(focus_enemy)
+	var min_dist = 999999999999
+	var target_enemy
+	
+	for enemigo in enemigos:
+		vector_distancia = enemigo.get_global_position() - get_global_position()
+		distancia = vector_distancia.length_squared()
+		if distancia < min_dist:
+			min_dist = distancia
+			target_enemy = enemigo
+	
 
-			rotation = ((focus_enemy.position - global_position).angle()) + PI/2
+	if target_enemy:
+		if target_enemy.destroyed:
+			target_enemy.queue_free()
+			enemigos.erase(target_enemy)
+	
+		rotation = ((target_enemy.global_position - global_position).angle())
 
-	var bullet_inst = bullet.instance()
-	bullet_inst.global_position = Vector2(0,0)
-	bullet_inst.rotation = rotation
+	
+		if bullet_cooldown_counter >= bullet_cooldown:
+			var bullet_inst = bullet.instance()
+			bullet_inst.global_position = global_position
+			bullet_inst.rotation = rotation
+			bullet_cooldown_counter = 0
+			get_tree().get_root().add_child(bullet_inst)
+
+			print(bullet_inst.rotation)
+			bullet_fire = true
 
 	if bullet_fire:
 		bullet_cooldown_counter += delta
-
-	if bullet_cooldown_counter >= bullet_cooldown:
-		bullet_cooldown_counter = 0
-		$"../Bullets".add_child(bullet_inst)
-		bullet_fire = true
 
 func _on_Gun_body_entered(body:Node):
 	
