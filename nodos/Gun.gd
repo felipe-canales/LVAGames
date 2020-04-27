@@ -11,7 +11,7 @@ var vector_distancia
 var movimiento = 2
 
 var bullet_fire = true
-var bullet_cooldown = 0.25
+var bullet_cooldown = 250
 var bullet_cooldown_counter = 0
 var distancia1 = 999999999999
 
