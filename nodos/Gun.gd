@@ -1,6 +1,7 @@
 extends Area2D
 
 const bullet = preload("res://nodos/Proyectil.tscn")
+
 var speed = 200
 var enemigos = []
 var velocity = Vector2()
@@ -11,7 +12,8 @@ var vector_distancia
 var movimiento = 2
 
 var bullet_fire = true
-var bullet_cooldown = 250
+var bullet_cooldown = 0.25
+
 var bullet_cooldown_counter = 0
 var distancia1 = 999999999999
 
@@ -39,21 +41,24 @@ func _physics_process(delta):
 	
 		rotation = ((target_enemy.global_position - global_position).angle())
 
-	
-		if bullet_cooldown_counter >= bullet_cooldown:
+		var space_state = get_world_2d().get_direct_space_state()
+		var result = space_state.intersect_ray(global_position, target_enemy.global_position, [focus_enemy, get_parent()])
+		var collision:Node = result.collider
+
+
+		if bullet_cooldown_counter >= bullet_cooldown && collision.get_class() == "KinematicBody2D":
 			var bullet_inst = bullet.instance()
 			bullet_inst.global_position = global_position
 			bullet_inst.rotation = rotation
 			bullet_cooldown_counter = 0
 			get_tree().get_root().add_child(bullet_inst)
-
-			print(bullet_inst.rotation)
 			bullet_fire = true
 
 	if bullet_fire:
 		bullet_cooldown_counter += delta
 
 func _on_Gun_body_entered(body:Node):
+
 	
 	if !enemigos.has(body) && body.is_in_group("Enemy"):
 		enemigos.append(body)
