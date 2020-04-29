@@ -14,7 +14,7 @@ position = Vector2( 464.781, 386.237 )
 [node name="Bullets" type="Node2D" parent="Player"]
 
 [node name="Gun" parent="Player" instance=ExtResource( 4 )]
-position = Vector2( -0.950001, -0.302 )
+position = Vector2( -4.2741, -0.301998 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true
@@ -37,6 +37,16 @@ __meta__ = {
 }
 
 [node name="Enemy_Group" type="Node" parent="."]
+
+[node name="Enemy6" parent="Enemy_Group" instance=ExtResource( 2 )]
+position = Vector2( 1571.02, 141.365 )
+
+[node name="Enemy5" parent="Enemy_Group" instance=ExtResource( 2 )]
+position = Vector2( 1234.18, 151.338 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Enemy4" parent="Enemy_Group" instance=ExtResource( 2 )]
+position = Vector2( 259.508, 93.155 )
 
 [node name="Enemy2" parent="Enemy_Group" instance=ExtResource( 2 )]
 position = Vector2( 807.802, 289.457 )

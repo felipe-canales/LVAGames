@@ -6,7 +6,7 @@ var scale_up = false
 var destruction_started = true
 
 # Velocidad a la que se acerca el enemigo
-var velocidad = 1000
+var velocidad = 4000
 # Distancia entre el enemigo y el player
 var distancia = 200
 
