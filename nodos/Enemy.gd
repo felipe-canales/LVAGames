@@ -10,7 +10,7 @@ var velocidad = 4000
 # Distancia entre el enemigo y el player
 var distancia = 200
 
-export var vida = 10
+export var vida = 3
 
 # Por definir segun la agrupacion de nodos
 onready var player = get_parent().get_parent().get_node("Player")

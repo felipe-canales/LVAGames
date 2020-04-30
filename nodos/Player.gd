@@ -1,10 +1,12 @@
 extends KinematicBody2D
 
-export var vida = 100
+export var life = 5
 var vel = Vector2(0,0)
-const TARGET_AXIS = 200
+var invincibility_timer = 0
+const TARGET_AXIS = 100
 const TARGET_DIAG = TARGET_AXIS / 1.41
 const ACCEL = 0.2
+const INVINCIBILTY_TIME = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,7 +15,11 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if invincibility_timer > 0:
+		if is_visible():
+			hide()
+		else:
+			show()
 
 func _physics_process(delta):
 	var target_x = 0
@@ -38,10 +44,28 @@ func _physics_process(delta):
 	vel.x = lerp(vel.x, target_x, ACCEL)
 	vel.y = lerp(vel.y, target_y, ACCEL)
 	move_and_slide(vel)
+	# After damage invincibility
+	if invincibility_timer > 0:
+		invincibility_timer -= delta
+		if invincibility_timer <= 0:
+			show()
+			get_node("DamageArea/CollisionShape2D").set_deferred("disabled",false)
+	
 
+func be_damaged():
+	life -=1
+	get_parent().get_node("UI").set_life(life)
+	get_node("DamageArea/CollisionShape2D").set_deferred("disabled",true)
+	if life == 0:
+		death()
+	invincibility_timer = INVINCIBILTY_TIME
+	
+func death():
+	hide()
+	get_node("CollisionShape2D").set_deferred("disabled", true)
+	get_tree().paused = true
+	
 
-func _on_Area2D_body_entered(body):
-
+func _on_DamageArea_body_entered(body):
 	if body.get_name().begins_with("Enemy"):
-		vida -=1
-		print(vida)
+		be_damaged()

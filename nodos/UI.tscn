@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://nodos/UI.gd" type="Script" id=1]
+[ext_resource path="res://temp_assets/hearts.png" type="Texture" id=2]
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource( 1 )
+
+[node name="Heart1" type="Sprite" parent="."]
+position = Vector2( 16, 584 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+vframes = 2
+
+[node name="Heart2" type="Sprite" parent="."]
+position = Vector2( 48, 584 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+vframes = 2
+
+[node name="Heart3" type="Sprite" parent="."]
+position = Vector2( 80, 584 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+vframes = 2
+
+[node name="Heart4" type="Sprite" parent="."]
+position = Vector2( 112, 584 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+vframes = 2
+
+[node name="Heart5" type="Sprite" parent="."]
+position = Vector2( 144, 584 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+vframes = 2
+
+[node name="GameOverMessage" type="Label" parent="."]
+visible = false
+margin_left = 544.0
+margin_top = 256.0
+margin_right = 620.0
+margin_bottom = 270.0
+custom_colors/font_color = Color( 1, 0.635294, 0.286275, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 0 )
+text = "GAME OVER"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -7,7 +7,7 @@
 radius = 40.0855
 height = 38.6711
 
-[sub_resource type="CapsuleShape2D" id=3]
+[sub_resource type="CapsuleShape2D" id=2]
 radius = 95.0
 
 [node name="Enemy" type="KinematicBody2D" groups=[
@@ -32,6 +32,6 @@ shape = SubResource( 1 )
 [node name="Daño" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Daño"]
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 [connection signal="area_entered" from="Daño" to="." method="_on_Dao_area_entered"]
 [connection signal="body_entered" from="Daño" to="." method="_on_Dao_body_entered"]
