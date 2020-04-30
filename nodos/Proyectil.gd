@@ -22,3 +22,4 @@ func _on_Proyectil_body_entered(body):
 		if !body.destroyed:
 			destroyed = true
 			body.shooted = true
+			queue_free()

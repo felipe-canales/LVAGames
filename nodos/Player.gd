@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-
+export var vida = 100
 var vel = Vector2(0,0)
 const TARGET_AXIS = 200
 const TARGET_DIAG = TARGET_AXIS / 1.41
@@ -38,3 +38,10 @@ func _physics_process(delta):
 	vel.x = lerp(vel.x, target_x, ACCEL)
 	vel.y = lerp(vel.y, target_y, ACCEL)
 	move_and_slide(vel)
+
+
+func _on_Area2D_body_entered(body):
+
+	if body.get_name().begins_with("Enemy"):
+		vida -=1
+		print(vida)
