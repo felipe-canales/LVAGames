@@ -21,4 +21,4 @@ func _on_Proyectil_body_entered(body):
 	if body.get_name().begins_with("Enemy"):
 		if !body.destroyed:
 			destroyed = true
-			body.destroyed = true
+			body.shooted = true
