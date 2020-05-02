@@ -61,9 +61,11 @@ func be_damaged():
 	invincibility_timer = INVINCIBILTY_TIME
 	
 func death():
-	hide()
-	get_node("CollisionShape2D").set_deferred("disabled", true)
-	get_tree().paused = true
+	#hide()
+	#get_node("CollisionShape2D").set_deferred("disabled", true)
+	#get_tree().paused = true
+	
+	get_tree().reload_current_scene()
 	
 
 func _on_DamageArea_body_entered(body):
