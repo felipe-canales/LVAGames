@@ -5,7 +5,7 @@ var vel = Vector2(0,0)
 var invincibility_timer = 0
 const TARGET_AXIS = 100
 const TARGET_DIAG = TARGET_AXIS / 1.41
-const ACCEL = 0.2
+const ACCEL = 0.5
 const INVINCIBILTY_TIME = 1
 
 # Called when the node enters the scene tree for the first time.
@@ -20,6 +20,9 @@ func _process(delta):
 			hide()
 		else:
 			show()
+	if(len(get_tree().get_nodes_in_group("Enemy")) == 0):
+		
+		get_parent().get_node("UI").show_game_over()
 
 func _physics_process(delta):
 	var target_x = 0

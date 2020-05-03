@@ -28,3 +28,6 @@ func set_life(value):
 
 func show_game_over():
 	get_node("GameOverMessage").show()
+	if Input.is_action_pressed("reset"):
+		
+		get_tree().reload_current_scene()

@@ -26,6 +26,8 @@ func _physics_process(delta):
 	
 	if vida == 0:
 			destroyed = true
+			
+
 
 	var dist = player.global_position.distance_to(global_position)
 	var dir_x = player.global_position.x - global_position.x
