@@ -40,10 +40,10 @@ __meta__ = {
 [node name="Enemy_Group" type="Node" parent="."]
 
 [node name="Enemy6" parent="Enemy_Group" instance=ExtResource( 2 )]
-position = Vector2( 1571.02, 141.365 )
+position = Vector2( 209.653, 247.672 )
 
 [node name="Enemy5" parent="Enemy_Group" instance=ExtResource( 2 )]
-position = Vector2( 1234.18, 151.338 )
+position = Vector2( 615.377, 216.392 )
 
 [node name="Enemy4" parent="Enemy_Group" instance=ExtResource( 2 )]
 position = Vector2( 259.508, 93.155 )
@@ -55,6 +55,6 @@ position = Vector2( 807.802, 289.457 )
 position = Vector2( 416.406, 119.514 )
 
 [node name="Enemy3" parent="Enemy_Group" instance=ExtResource( 2 )]
-position = Vector2( 464.896, 550.576 )
+position = Vector2( 477.589, 429.989 )
 
 [node name="UI" parent="." instance=ExtResource( 5 )]

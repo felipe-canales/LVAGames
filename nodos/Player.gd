@@ -5,7 +5,7 @@ var vel = Vector2(0,0)
 var invincibility_timer = 0
 const TARGET_AXIS = 100
 const TARGET_DIAG = TARGET_AXIS / 1.41
-const ACCEL = 0.5
+const ACCEL = 1.5
 const INVINCIBILTY_TIME = 1
 
 # Called when the node enters the scene tree for the first time.
