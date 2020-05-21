@@ -7,9 +7,8 @@ var salir = "salir"
 var botones = [continuar, opciones, salir]
 var actual_boton = 0
 var boton
-
 var bull
-
+onready var node = $".."
 var escena_inicio = "res://nodos/MainMenu.tscn"
 
 func _ready():
@@ -18,15 +17,12 @@ func _ready():
 func _reset():
 	actual_boton = 0
 	
-	
 func set_bull(bullets):
 	
 	bull = bullets
 
-
 func _physics_process(delta):
 	
-	print(bull)
 	
 	if Input.is_action_just_pressed("player_up"):
 		
@@ -64,18 +60,13 @@ func _physics_process(delta):
 		match boton:
 			
 			continuar:
-				
-				get_tree().paused = false
-				hide()
 				actual_boton = 0
-				
+				node._unpaused()
 				
 			opciones:
-				
 				pass
 				
 			salir:
-
+				
 				get_tree().paused = false
 				get_tree().change_scene(escena_inicio)
-

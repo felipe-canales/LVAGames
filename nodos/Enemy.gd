@@ -27,8 +27,6 @@ func _physics_process(delta):
 	if vida == 0:
 			destroyed = true
 			
-
-
 	var dist = player.global_position.distance_to(global_position)
 	var dir_x = player.global_position.x - global_position.x
 	var dir_y = player.global_position.y - global_position.y
@@ -42,9 +40,10 @@ func _physics_process(delta):
 		
 	move_and_slide(Vector2(movcont_x, movcont_y).normalized() * velocidad * delta)
 
-
-
 func _on_Dao_area_entered(area):
 	if area.get_name().begins_with("Proyectil"):
 		vida -= 1
 		print(vida)
+
+func _on_Dao_body_entered(body):
+	pass

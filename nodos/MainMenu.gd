@@ -52,14 +52,10 @@ func _physics_process(delta):
 		match boton:
 			
 			jugar:
-				
 				get_tree().change_scene(escena_inicio)
 				
-				
 			opciones:
-				
 				pass
 				
 			salir:
-				
 				get_tree().quit()
