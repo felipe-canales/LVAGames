@@ -8,6 +8,8 @@ const TARGET_DIAG = TARGET_AXIS / 1.41
 const ACCEL = 1.5
 const INVINCIBILTY_TIME = 1
 
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -53,6 +55,8 @@ func _physics_process(delta):
 		if invincibility_timer <= 0:
 			show()
 			get_node("DamageArea/CollisionShape2D").set_deferred("disabled",false)
+			
+
 	
 
 func be_damaged():
