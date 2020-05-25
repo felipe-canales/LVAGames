@@ -1,13 +1,30 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://temp_assets/icon.png" type="Texture" id=1]
 [ext_resource path="res://nodos/Player.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Tentoria/Tentoria_Stand/P_Stand_1.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Tentoria/Tentoria_Stand/P_Stand_1a.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Tentoria/Tentoria_Stand/P_Stand_2.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Tentoria/Tentoria_Stand/P_Stand_2a.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Tentoria/Tentoria_Stand/P_Stand_4.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Tentoria/Tentoria_Stand/P_Stand_4a.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Tentoria/Tentoria_Stand/P_Stand_5.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Tentoria/Tentoria_Stand/P_Stand_3a.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Tentoria/Tentoria_Stand/P_Stand_3.png" type="Texture" id=11]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 15, -11, 15, 11, 11, 15, -11, 15, -15, 11, -15, -11, -11, -15, 11, -15 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 24, 24 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "stand",
+"speed": 7.0
+} ]
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 2 )
@@ -23,4 +40,10 @@ shape = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea"]
 shape = SubResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 3 )
+animation = "stand"
+frame = 8
+playing = true
 [connection signal="body_entered" from="DamageArea" to="." method="_on_DamageArea_body_entered"]
