@@ -68,5 +68,8 @@ func _physics_process(delta):
 				
 			salir:
 				
+				var bullets = get_tree().get_nodes_in_group("Bullets")
+				for bull in bullets:
+					bull.queue_free()
 				get_tree().paused = false
 				get_tree().change_scene(escena_inicio)

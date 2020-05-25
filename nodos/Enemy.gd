@@ -15,7 +15,6 @@ export var vida = 3
 # Por definir segun la agrupacion de nodos
 onready var player = get_parent().get_parent().get_node("Player")
 
-
 var movcont_x = 0
 var movcont_y = 0
 
@@ -47,3 +46,4 @@ func _on_Dao_area_entered(area):
 
 func _on_Dao_body_entered(body):
 	pass
+

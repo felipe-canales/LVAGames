@@ -57,6 +57,7 @@ func _physics_process(delta):
 				bullet_inst.rotation = rotation
 				bullet_cooldown_counter = 0
 				get_tree().get_root().add_child(bullet_inst)
+				
 				bullet_fire = true
 
 	if bullet_fire:

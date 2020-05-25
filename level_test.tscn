@@ -19,11 +19,17 @@ limit_top = -4
 limit_right = 1604
 limit_bottom = 772
 
-[node name="Bullets" type="Node2D" parent="Player"]
-z_as_relative = false
-
 [node name="Gun" parent="Player" instance=ExtResource( 4 )]
 position = Vector2( -4.2741, -0.301998 )
+
+[node name="Bullets" type="Node2D" parent="Player/Gun" groups=[
+"Bull",
+]]
+position = Vector2( 4.59424, 0.266632 )
+scale = Vector2( 1.0749, 0.882877 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2( -200, -112 )
@@ -48,9 +54,6 @@ position = Vector2( 615.377, 216.392 )
 
 [node name="Enemy4" parent="Enemy_Group" instance=ExtResource( 2 )]
 position = Vector2( 259.508, 93.155 )
-
-[node name="Enemy2" parent="Enemy_Group" instance=ExtResource( 2 )]
-position = Vector2( 807.802, 289.457 )
 
 [node name="Enemy" parent="Enemy_Group" instance=ExtResource( 2 )]
 position = Vector2( 416.406, 119.514 )

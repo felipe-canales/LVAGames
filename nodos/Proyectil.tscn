@@ -9,7 +9,7 @@ radius = 4.9322
 [node name="Proyectil" type="Area2D" groups=[
 "Bullets",
 ]]
-position = Vector2( 18.7309, 0.681122 )
+position = Vector2( 0.033268, -0.165273 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
