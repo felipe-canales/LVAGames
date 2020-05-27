@@ -72,4 +72,5 @@ func _physics_process(delta):
 				for bull in bullets:
 					bull.queue_free()
 				get_tree().paused = false
+				get_tree().get_nodes_in_group("Chapters")[0].queue_free()
 				get_tree().change_scene(escena_inicio)

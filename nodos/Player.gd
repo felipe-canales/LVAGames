@@ -26,7 +26,10 @@ func _process(delta):
 		
 		get_parent().get_node("UI").show_game_over()
 
+
 func _physics_process(delta):
+	
+
 	var target_x = 0
 	var target_y = 0
 	# Set direction
@@ -73,7 +76,7 @@ func death():
 	#get_tree().paused = true
 	
 	get_tree().reload_current_scene()
-	
+	get_tree().get_nodes_in_group("Chapters")[0].up_level()
 
 func _on_DamageArea_body_entered(body):
 	if body.get_name().begins_with("Enemy"):

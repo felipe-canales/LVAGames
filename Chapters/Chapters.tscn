@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Chapters/Chapter2.gd" type="Script" id=2]
+[ext_resource path="res://Chapters/Chapter1.gd" type="Script" id=3]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node2D
+
+var actual_chapter
+var num_chapter = 0
+var chapters
+
+var escena_inicio = \"res://nodos/MainMenu.tscn\"
+
+func _ready():
+
+	chapters = get_children()
+	actual_chapter = get_children()[num_chapter]
+	actual_chapter.init_level()
+	
+func get_chapter():
+	
+	return actual_chapter
+
+func up_chapter():
+	
+	num_chapter += 1
+	if num_chapter < len(chapters):
+
+		actual_chapter = chapters[num_chapter]
+	
+	else:
+		get_tree().change_scene(escena_inicio)
+	
+func up_level():
+	
+	var bullets = get_tree().get_nodes_in_group(\"Bullets\")
+	for bull in bullets:
+		bull.queue_free()
+	actual_chapter.up_nivel()
+
+func _process(delta):
+	pass
+"
+
+[node name="Chapters" type="Node2D" groups=[
+"Chapters",
+]]
+script = SubResource( 1 )
+
+[node name="Chapter1" type="Node2D" parent="."]
+script = ExtResource( 3 )
+
+[node name="Chapter2" type="Node2D" parent="."]
+script = ExtResource( 2 )

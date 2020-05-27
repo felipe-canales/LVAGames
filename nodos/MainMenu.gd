@@ -8,7 +8,7 @@ var botones = [jugar, opciones, salir]
 var actual_boton = 0
 var boton
 
-var escena_inicio = "res://level_test.tscn"
+const chapter1 = preload("res://Chapters/Chapters.tscn")
 
 func _ready():
 	pass 
@@ -52,7 +52,8 @@ func _physics_process(delta):
 		match boton:
 			
 			jugar:
-				get_tree().change_scene(escena_inicio)
+				var niv = chapter1.instance()
+				get_tree().get_root().add_child(niv)
 				
 			opciones:
 				pass
