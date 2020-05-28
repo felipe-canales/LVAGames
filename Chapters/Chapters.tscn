@@ -30,6 +30,10 @@ func up_chapter():
 		actual_chapter = chapters[num_chapter]
 	
 	else:
+		var bullets = get_tree().get_nodes_in_group(\"Bullets\")
+		for bull in bullets:
+			bull.queue_free()
+		get_tree().get_nodes_in_group(\"Chapters\")[0].queue_free()
 		get_tree().change_scene(escena_inicio)
 	
 func up_level():

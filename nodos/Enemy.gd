@@ -19,7 +19,7 @@ var movcont_x = 0
 var movcont_y = 0
 
 func _ready():
-	pass # Replace with function body.
+	pass 
 
 func _physics_process(delta):
 	

@@ -13,7 +13,6 @@ const chapter1 = preload("res://Chapters/Chapters.tscn")
 func _ready():
 	pass 
 
-
 func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("player_up"):
