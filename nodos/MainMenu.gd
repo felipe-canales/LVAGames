@@ -51,6 +51,7 @@ func _physics_process(delta):
 		match boton:
 			
 			jugar:
+				
 				var niv = chapter1.instance()
 				get_tree().get_root().add_child(niv)
 				

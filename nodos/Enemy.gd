@@ -39,8 +39,8 @@ func _physics_process(delta):
 		
 	move_and_slide(Vector2(movcont_x, movcont_y).normalized() * velocidad * delta)
 
-func _on_Dao_area_entered(area):
-	if area.get_name().begins_with("Proyectil"):
+func _on_Dao_area_entered(area:Area2D):
+	if "Bullets" in area.get_groups():
 		vida -= 1
 		print(vida)
 
