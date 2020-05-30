@@ -22,7 +22,7 @@ var enemigos_novisibles = []
 
 var rot = 0
 var target_enemy
-var min_dist = 999999999999
+
 
 func _ready():
 	pass # Replace with function body.
@@ -48,6 +48,8 @@ func _process(delta):
 
 	for enemigo in enemigos_novisibles:
 		
+		if enemigo == target_enemy:
+			target_enemy = null
 		var space_state = get_world_2d().get_direct_space_state()
 		var result = space_state.intersect_ray(global_position, enemigo.global_position, [focus_enemy, get_parent()])
 		var collision:Node = result.collider
@@ -61,6 +63,7 @@ func _physics_process(delta):
 		if target_enemy.destroyed:
 			target_enemy.queue_free()
 			enemigos.erase(target_enemy)
+			enemigos_novisibles.erase(target_enemy)
 			target_enemy = null
 		
 		if target_enemy != null:	
