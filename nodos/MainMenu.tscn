@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://scripts/menu/JUGAR.png" type="Texture" id=1]
+[ext_resource path="res://scripts/menu/jugar.png" type="Texture" id=1]
 [ext_resource path="res://scripts/menu/logo.png" type="Texture" id=2]
 [ext_resource path="res://scripts/menu/opciones.png" type="Texture" id=3]
 [ext_resource path="res://nodos/MainMenu.gd" type="Script" id=4]

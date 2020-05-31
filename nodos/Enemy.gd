@@ -42,7 +42,7 @@ func _physics_process(delta):
 func _on_Dao_area_entered(area:Area2D):
 	if "Bullets" in area.get_groups():
 		vida -= 1
-		print(vida)
+
 
 func _on_Dao_body_entered(body):
 	pass
