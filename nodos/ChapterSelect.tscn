@@ -1,0 +1,103 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://nodos/ChapterSelect.gd" type="Script" id=1]
+[ext_resource path="res://scripts/chapterselect/titulo.png" type="Texture" id=2]
+[ext_resource path="res://scripts/chapterselect/capitulo2.png" type="Texture" id=3]
+[ext_resource path="res://scripts/chapterselect/capitulo1.png" type="Texture" id=4]
+[ext_resource path="res://scripts/menu/back.png" type="Texture" id=5]
+[ext_resource path="res://scripts/chapterselect/atras.png" type="Texture" id=6]
+[ext_resource path="res://nodos/Capitulo1.gd" type="Script" id=7]
+[ext_resource path="res://nodos/Atras.gd" type="Script" id=8]
+[ext_resource path="res://nodos/Capitulo2.gd" type="Script" id=9]
+
+[sub_resource type="ShaderMaterial" id=1]
+
+[node name="ChapterSelect" type="MarginContainer"]
+material = SubResource( 1 )
+margin_left = 6.46173
+margin_right = 1372.46
+margin_bottom = 768.0
+custom_constants/margin_right = 120
+custom_constants/margin_top = 80
+custom_constants/margin_left = 120
+custom_constants/margin_bottom = 80
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_left = 120.0
+margin_top = 80.0
+margin_right = 1245.0
+margin_bottom = 688.0
+mouse_filter = 0
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+margin_right = 623.0
+margin_bottom = 608.0
+
+[node name="Logo" type="TextureRect" parent="HBoxContainer/VBoxContainer"]
+margin_right = 623.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+stretch_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer"]
+margin_top = 36.0
+margin_right = 623.0
+margin_bottom = 604.0
+size_flags_vertical = 3
+custom_constants/separation = 30
+alignment = 1
+
+[node name="Capitulo1" type="TextureRect" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
+margin_top = 213.0
+margin_right = 623.0
+margin_bottom = 240.0
+texture = ExtResource( 4 )
+stretch_mode = 3
+script = ExtResource( 7 )
+
+[node name="Capitulo2" type="TextureRect" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
+margin_top = 270.0
+margin_right = 623.0
+margin_bottom = 297.0
+texture = ExtResource( 3 )
+stretch_mode = 3
+script = ExtResource( 9 )
+
+[node name="Atras" type="TextureRect" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
+margin_top = 327.0
+margin_right = 623.0
+margin_bottom = 354.0
+texture = ExtResource( 6 )
+stretch_mode = 3
+script = ExtResource( 8 )
+
+[node name="Version" type="TextureRect" parent="HBoxContainer/VBoxContainer"]
+margin_top = 608.0
+margin_right = 623.0
+margin_bottom = 608.0
+stretch_mode = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer"]
+margin_left = 627.0
+margin_right = 1125.0
+margin_bottom = 608.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Characters" type="TextureRect" parent="HBoxContainer/CenterContainer"]
+margin_left = 249.0
+margin_top = 304.0
+margin_right = 249.0
+margin_bottom = 304.0
+stretch_mode = 3
+
+[node name="back" type="Sprite" parent="."]
+position = Vector2( -492.592, -24.6793 )
+z_index = -1
+texture = ExtResource( 5 )
+centered = false

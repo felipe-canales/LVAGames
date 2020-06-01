@@ -15,8 +15,13 @@ var escena_inicio = \"res://nodos/MainMenu.tscn\"
 func _ready():
 
 	chapters = get_children()
-	actual_chapter = get_children()[num_chapter]
 	actual_chapter.init_level()
+
+func init(num_chap):
+	
+	num_chapter = num_chap
+	actual_chapter = get_children()[num_chapter]
+
 	
 func get_chapter():
 	
@@ -25,9 +30,11 @@ func get_chapter():
 func up_chapter():
 	
 	num_chapter += 1
+	print(len(chapters))
 	if num_chapter < len(chapters):
 
 		actual_chapter = chapters[num_chapter]
+		actual_chapter.init_level()
 	
 	else:
 		var bullets = get_tree().get_nodes_in_group(\"Bullets\")

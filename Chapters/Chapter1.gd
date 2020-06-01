@@ -6,7 +6,7 @@ var nivel2 = "res://Chapters/Chapter1/level_02.tscn"
 var arreglo_niveles = [nivel1, nivel2]
 
 var actual_nivel
-var num_nivel
+var num_nivel 
 
 
 func _ready():
@@ -14,10 +14,12 @@ func _ready():
 	num_nivel = 0
 	actual_nivel = arreglo_niveles[num_nivel]
 
-
 func init_level():
 	
+
+	actual_nivel = arreglo_niveles[num_nivel]
 	get_tree().change_scene(actual_nivel)
+
 	
 func up_nivel():
 	
@@ -27,6 +29,7 @@ func up_nivel():
 		actual_nivel = arreglo_niveles[num_nivel]
 		get_tree().change_scene(actual_nivel)
 	else:
+		print("uwu")
 		get_parent().up_chapter()
 	
 func _process(delta):
