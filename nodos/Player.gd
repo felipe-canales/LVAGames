@@ -1,12 +1,13 @@
 extends KinematicBody2D
 
 export var life = 5
+export var INVINCIBILTY_TIME = 0.5
 var vel = Vector2(0,0)
 var invincibility_timer = 0
 const TARGET_AXIS = 100
 const TARGET_DIAG = TARGET_AXIS / 1.41
 const ACCEL = 1.5
-const INVINCIBILTY_TIME = 1
+
 
 
 
@@ -63,12 +64,13 @@ func _physics_process(delta):
 	
 
 func be_damaged():
+	invincibility_timer = INVINCIBILTY_TIME
 	life -=1
 	get_parent().get_node("UI").set_life(life)
 	get_node("DamageArea/CollisionShape2D").set_deferred("disabled",true)
 	if life == 0:
+		invincibility_timer = 0
 		death()
-	invincibility_timer = INVINCIBILTY_TIME
 	
 func death():
 	#hide()
@@ -79,5 +81,5 @@ func death():
 	get_tree().get_nodes_in_group("Chapters")[0].up_level()
 
 func _on_DamageArea_body_entered(body):
-	if body.get_name().begins_with("Enemy"):
+	if body.get_name().begins_with("Enemy") and invincibility_timer <= 0:
 		be_damaged()

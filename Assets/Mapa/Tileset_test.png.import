@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/JUGAR.png-11ec62c173d884264fdb8e77b5de5040.stex"
+path="res://.import/Tileset_test.png-969019ed9b9bf4fd385b174a587e3117.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scripts/menu/JUGAR.png"
-dest_files=[ "res://.import/JUGAR.png-11ec62c173d884264fdb8e77b5de5040.stex" ]
+source_file="res://Assets/Mapa/Tileset_test.png"
+dest_files=[ "res://.import/Tileset_test.png-969019ed9b9bf4fd385b174a587e3117.stex" ]
 
 [params]
 

@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://nodos/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://nodos/UI.tscn" type="PackedScene" id=2]
+[ext_resource path="res://nodos/Enemy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://nodos/TileMap.tscn" type="PackedScene" id=4]
+[ext_resource path="res://nodos/Gun.tscn" type="PackedScene" id=5]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 75, 450 )
+INVINCIBILTY_TIME = 0.75
+
+[node name="Gun" parent="Player" instance=ExtResource( 5 )]
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+current = true
+limit_left = -100
+limit_top = -100
+limit_right = 1700
+limit_bottom = 800
+
+[node name="UI" parent="." instance=ExtResource( 2 )]
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Enemy6" parent="Node" instance=ExtResource( 3 )]
+position = Vector2( 1225, 50 )
+
+[node name="Enemy11" parent="Node" instance=ExtResource( 3 )]
+position = Vector2( 1425, 325 )
+
+[node name="Enemy12" parent="Node" instance=ExtResource( 3 )]
+position = Vector2( 325, 350 )
+vida = 1
+
+[node name="Enemy7" parent="Node" instance=ExtResource( 3 )]
+position = Vector2( 625, 175 )
+
+[node name="Enemy3" parent="Node" instance=ExtResource( 3 )]
+position = Vector2( 925, 250 )
+
+[node name="TileMap" parent="." instance=ExtResource( 4 )]
+tile_data = PoolIntArray( -65534, 2, 131073, -65533, 2, 0, -65532, 2, 1, -65531, 2, 1, -65530, 2, 131072, -65529, 2, 0, -65528, 2, 65536, -65527, 2, 0, -65526, 2, 131073, -65525, 2, 1, -65524, 2, 65537, -65523, 2, 131072, -65522, 2, 131072, -65521, 2, 131072, -65520, 2, 1, 2, 2, 131072, 11, 2, 1, 16, 2, 131072, 65538, 2, 131073, 65541, 2, 1, 65552, 2, 1, 131074, 2, 131072, 131077, 2, 0, 131078, 2, 0, 131079, 2, 65536, 131080, 2, 0, 131083, 2, 1, 131084, 2, 0, 131085, 2, 0, 131086, 2, 65537, 131088, 2, 0, 262143, 2, 65536, 196608, 2, 131072, 196609, 2, 65537, 196610, 2, 65537, 196613, 2, 65536, 196616, 2, 0, 196619, 2, 1, 196621, 2, 131073, 196624, 2, 65537, 327679, 2, 1, 262149, 2, 0, 262152, 2, 131073, 262155, 2, 1, 262157, 2, 131073, 262160, 2, 0, 393215, 2, 0, 327685, 2, 65537, 327688, 2, 1, 327689, 2, 65537, 327690, 2, 65536, 327691, 2, 0, 327693, 2, 65536, 327694, 2, 65537, 327695, 2, 65536, 327696, 2, 65536, 458751, 2, 131072, 393216, 2, 65537, 393217, 2, 1, 393218, 2, 0, 393221, 2, 65536, 458754, 2, 0, 458755, 2, 131072, 458756, 2, 65536, 458757, 2, 131072 )
