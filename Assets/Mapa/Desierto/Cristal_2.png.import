@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/JUGAR.png-11ec62c173d884264fdb8e77b5de5040.stex"
+path="res://.import/Cristal_2.png-c7fe8172a624fa8f40dfefc560a00a67.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scripts/menu/JUGAR.png"
-dest_files=[ "res://.import/JUGAR.png-11ec62c173d884264fdb8e77b5de5040.stex" ]
+source_file="res://Assets/Mapa/Desierto/Cristal_2.png"
+dest_files=[ "res://.import/Cristal_2.png-c7fe8172a624fa8f40dfefc560a00a67.stex" ]
 
 [params]
 

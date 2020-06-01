@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/JUGAR.png-11ec62c173d884264fdb8e77b5de5040.stex"
+path="res://.import/Enemigo_Side_5.png-5d1dbec33cd2822194881cf571d7cee0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scripts/menu/JUGAR.png"
-dest_files=[ "res://.import/JUGAR.png-11ec62c173d884264fdb8e77b5de5040.stex" ]
+source_file="res://Assets/Enemigo_1/Side/Enemigo_Side_5.png"
+dest_files=[ "res://.import/Enemigo_Side_5.png-5d1dbec33cd2822194881cf571d7cee0.stex" ]
 
 [params]
 
