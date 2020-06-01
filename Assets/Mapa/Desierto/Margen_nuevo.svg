@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="192px"
+	 height="192px" viewBox="0 0 192 192" enable-background="new 0 0 192 192" xml:space="preserve">
+<g id="Layer_1">
+	<rect fill="#4B264C" stroke="#572F5E" stroke-miterlimit="10" width="192" height="192"/>
+	<rect y="0.25" fill="#8D6C93" stroke="#8D6C93" stroke-miterlimit="10" width="192" height="96"/>
+	<rect y="97.25" opacity="0.5" fill="#62376A" stroke="#572F5E" stroke-miterlimit="10" width="192" height="20"/>
+	<rect y="118" fill="#45233D" stroke="#47234D" stroke-miterlimit="10" width="192" height="5"/>
+	<path fill="#572F5E" stroke="#572F5E" stroke-miterlimit="10" d="M223.75,46.75"/>
+</g>
+<g id="Layer_2">
+	<polygon fill="#F8A273" stroke="#F8A273" stroke-miterlimit="10" points="70.892,154.071 53.5,173.589 36.108,154.071 
+		53.5,134.554 	"/>
+	<polygon fill="#FBB040" stroke="#FBB040" stroke-width="0.5" stroke-miterlimit="10" points="53.5,160.071 53.5,134.554 
+		70.892,154.071 	"/>
+	<polygon fill="#F7941E" stroke="#F7941E" stroke-width="0.5" stroke-miterlimit="10" points="53.675,160.875 53.675,174.393 
+		36.283,154.875 	"/>
+	<polygon fill="#F15A29" stroke="#F15A29" stroke-width="0.5" stroke-miterlimit="10" points="53.5,160.875 53.5,174.393 
+		70.892,154.875 	"/>
+	<path fill="#F8A273" stroke="#F8A273" stroke-miterlimit="10" d="M139,176.589"/>
+	<path fill="#F7941E" stroke="#F7941E" stroke-width="0.5" stroke-miterlimit="10" d="M139.176,176.393"/>
+	<path fill="#F15A29" stroke="#F15A29" stroke-width="0.5" stroke-miterlimit="10" d="M139,176.393"/>
+	<polygon fill="#F8A273" stroke="#F8A273" stroke-miterlimit="10" points="156.568,154.268 139.176,173.785 121.783,154.268 
+		139.176,134.75 	"/>
+	<polygon fill="#FBB040" stroke="#FBB040" stroke-width="0.5" stroke-miterlimit="10" points="139.176,160.268 139.176,134.75 
+		156.568,154.268 	"/>
+	<polygon fill="#F7941E" stroke="#F7941E" stroke-width="0.5" stroke-miterlimit="10" points="139.352,161.071 139.352,174.589 
+		121.959,155.071 	"/>
+	<polygon fill="#F15A29" stroke="#F15A29" stroke-width="0.5" stroke-miterlimit="10" points="139.176,161.071 139.176,174.589 
+		156.568,155.071 	"/>
+</g>
+<g id="Layer_3">
+	<polygon opacity="0.5" fill="#45233D" stroke="#45233D" stroke-width="0.5" stroke-miterlimit="10" points="71.892,154.071 
+		53.5,161.071 35.283,154.071 53.675,186.25 	"/>
+	<polygon opacity="0.5" fill="#45233D" stroke="#45233D" stroke-width="0.5" stroke-miterlimit="10" points="157.305,154.071 
+		138.912,161.071 120.695,154.071 139.088,186.25 	"/>
+	<polygon fill="#62376A" stroke="#62376A" stroke-width="0.5" stroke-miterlimit="10" points="0,97.25 192,97.25 187.5,93.5 
+		4.25,92.5 	"/>
+	<polygon fill="#6C4C72" stroke="#6C4C72" stroke-width="0.5" stroke-miterlimit="10" points="192,0.25 192,97.25 187.5,93.5 
+		187.5,4.25 	"/>
+	<polyline fill="#6C4C72" stroke="#6C4C72" stroke-width="0.5" stroke-miterlimit="10" points="0,97.25 0,0.25 3.75,4.25 4.25,92.5 
+			"/>
+</g>
+</svg>
