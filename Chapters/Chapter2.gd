@@ -1,7 +1,7 @@
 extends Node2D
 
-var nivel1 = "res://Chapters/Chapter1/level_test.tscn"
-var nivel2 = "res://Chapters/Chapter1/level_test_2.tscn"
+var nivel1 = "res://Chapters/Chapter1/level_01.tscn"
+var nivel2 = "res://Chapters/Chapter1/level_02.tscn"
 
 var arreglo_niveles = [nivel1]
 

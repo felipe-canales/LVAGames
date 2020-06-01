@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/jugar.png-bd6aed100514b8f9e11623c5a823557f.stex"
+path="res://.import/Margen_gastado.svg-53e5eb1760fdcde6c382b7562269291b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scripts/menu/jugar.png"
-dest_files=[ "res://.import/jugar.png-bd6aed100514b8f9e11623c5a823557f.stex" ]
+source_file="res://Assets/Mapa/Desierto/Margen_gastado.svg"
+dest_files=[ "res://.import/Margen_gastado.svg-53e5eb1760fdcde6c382b7562269291b.stex" ]
 
 [params]
 

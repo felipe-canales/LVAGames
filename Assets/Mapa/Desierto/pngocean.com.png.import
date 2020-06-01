@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/jugar.png-bd6aed100514b8f9e11623c5a823557f.stex"
+path="res://.import/pngocean.com.png-35c57fe84308fdb775b1ff6317de4e1b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scripts/menu/jugar.png"
-dest_files=[ "res://.import/jugar.png-bd6aed100514b8f9e11623c5a823557f.stex" ]
+source_file="res://Assets/Mapa/Desierto/pngocean.com.png"
+dest_files=[ "res://.import/pngocean.com.png-35c57fe84308fdb775b1ff6317de4e1b.stex" ]
 
 [params]
 
