@@ -1,4 +1,4 @@
-extends MarginContainer
+extends Container
 
 var chapter1 = "chapter1"
 var chapter2 = "chapter2"
@@ -19,9 +19,9 @@ func _ready():
 func image_button(num):
 	
 	
-	$"HBoxContainer/VBoxContainer/VBoxContainer/Capitulo1".change_status(0 == num)
-	$"HBoxContainer/VBoxContainer/VBoxContainer/Capitulo2".change_status(1 == num)
-	$"HBoxContainer/VBoxContainer/VBoxContainer/Atras".change_status(2 == num)
+	$"Capitulo1".change_status(0 == num)
+	$"Capitulo2".change_status(1 == num)
+	$"Atras".change_status(2 == num)
 
 
 func _physics_process(delta):

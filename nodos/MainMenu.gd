@@ -1,4 +1,4 @@
-extends MarginContainer
+extends Container
 
 var jugar = "jugar"
 var opciones = "opciones"
@@ -18,10 +18,10 @@ func _ready():
 func image_button(num):
 	
 	
-	$"HBoxContainer/VBoxContainer/VBoxContainer/Jugar".change_status(0 == num)
-	$"HBoxContainer/VBoxContainer/VBoxContainer/Seleccionar".change_status(1 == num)
-	$"HBoxContainer/VBoxContainer/VBoxContainer/Opciones".change_status(2 == num)
-	$"HBoxContainer/VBoxContainer/VBoxContainer/Salir".change_status(3 == num)
+	$"Jugar".change_status(0 == num)
+	$"Seleccionar".change_status(1 == num)
+	$"Opciones".change_status(2 == num)
+	$"Salir".change_status(3 == num)
 	
 func _physics_process(delta):
 	

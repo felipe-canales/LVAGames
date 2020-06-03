@@ -2,8 +2,8 @@ extends TextureRect
 
 var active = false
 
-var image_chapter1 = load("res://scripts/chapterselect/capitulo1.png")
-var image_chapter1_ = load("res://scripts/chapterselect/capitulo1_.png")
+var image_chapter1 = load("res://Assets/UI/cap1.png")
+var image_chapter1_ = load("res://Assets/UI/cap1_.png")
 
 
 func _ready():

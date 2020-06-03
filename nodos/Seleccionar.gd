@@ -2,8 +2,8 @@ extends TextureRect
 
 var active = false
 
-var image_seleccionar = load("res://scripts/menu/seleccionar.png")
-var image_seleccionar_ = load("res://scripts/menu/seleccionar_.png")
+var image_seleccionar = load("res://Assets/UI/capitulos.png")
+var image_seleccionar_ = load("res://Assets/UI/capitulos_.png")
 
 
 func _ready():
