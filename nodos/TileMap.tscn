@@ -27,6 +27,7 @@ points = PoolVector2Array( 100, 100, 7.62939e-06, 100, 7.62939e-06, 1.52588e-05,
 points = PoolVector2Array( 100, 100, 1.52588e-05, 100, 1.52588e-05, 1.52588e-05, 100, 1.52588e-05 )
 
 [sub_resource type="TileSet" id=9]
+resource_local_to_scene = true
 0/name = "tileset_test_house"
 0/texture = ExtResource( 1 )
 0/tex_offset = Vector2( 0, 0 )
