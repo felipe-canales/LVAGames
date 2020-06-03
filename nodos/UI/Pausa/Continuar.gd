@@ -2,8 +2,8 @@ extends TextureRect
 
 var active = false
 
-var image_continuar = load("res://scripts/pause/continuar.png")
-var image_continuar_ =load("res://scripts/pause/continuar_.png")
+var image_continuar = load("res://Assets/UI/jugar.png")
+var image_continuar_ =load("res://Assets/UI/jugar_.png")
 
 
 func _ready():

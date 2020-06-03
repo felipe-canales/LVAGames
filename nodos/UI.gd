@@ -4,7 +4,7 @@ extends CanvasLayer
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-onready var pause = preload("res://nodos/Pausa.tscn")
+onready var pause = preload("res://nodos/UI/Pausa/Pausa.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

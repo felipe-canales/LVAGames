@@ -9,7 +9,7 @@ var actual_boton = 0
 var boton
 var bull
 onready var node = $".."
-var escena_inicio = "res://nodos/MainMenu.tscn"
+var escena_inicio = "res://nodos/UI/MainMenu/MainMenu.tscn"
 
 func _ready():
 	actual_boton = 0

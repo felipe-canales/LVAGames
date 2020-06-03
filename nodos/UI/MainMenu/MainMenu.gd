@@ -1,17 +1,16 @@
 extends Container
 
-var chapter1 = "chapter1"
-var chapter2 = "chapter2"
-var atras = "atras"
+var jugar = "jugar"
+var opciones = "opciones"
+var seleccionar = "seleccionar"
+var salir = "salir"
 
-
-var botones = [chapter1, chapter2, atras]
+var botones = [jugar, seleccionar, opciones, salir]
 var actual_boton = 0
 var boton
 
-
-const menu = "res://nodos/MainMenu.tscn"
-var chapter = preload("res://Chapters/Chapters.tscn")
+const chapter = preload("res://Chapters/Chapters.tscn")
+const select_chapter = "res://nodos/UI/ChapterSelect/ChapterSelect.tscn"
 
 func _ready():
 	pass 
@@ -19,11 +18,11 @@ func _ready():
 func image_button(num):
 	
 	
-	$"Capitulo1".change_status(0 == num)
-	$"Capitulo2".change_status(1 == num)
-	$"Atras".change_status(2 == num)
-
-
+	$"Jugar".change_status(0 == num)
+	$"Seleccionar".change_status(1 == num)
+	$"Opciones".change_status(2 == num)
+	$"Salir".change_status(3 == num)
+	
 func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("player_up"):
@@ -39,33 +38,35 @@ func _physics_process(delta):
 
 	match boton:
 		
-		chapter1:
+		jugar:
 			
 			image_button(0)
-		chapter2:
+		seleccionar:
 
 			image_button(1)
-		atras:
+		opciones:
 			
 			image_button(2)
-
+		salir:
+			
+			image_button(3)
 			
 	if Input.is_action_just_pressed("enter"):
 		
 		match boton:
 			
-			chapter1:
+			jugar:
 				
 				var niv1 = chapter.instance()
 				niv1.init(0)
 				get_tree().get_root().add_child(niv1)
 				
-			chapter2:
+			seleccionar:
 				
-				var niv2 = chapter.instance()
-				niv2.init(1)
-				get_tree().get_root().add_child(niv2)
+				get_tree().change_scene(select_chapter)
 				
-			atras:
+			opciones:
+				pass
 				
-				get_tree().change_scene(menu)
+			salir:
+				get_tree().quit()
