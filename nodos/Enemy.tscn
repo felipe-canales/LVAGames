@@ -23,7 +23,8 @@ radius = 116.239
 height = 335.202
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 108.935
+radius = 128.232
+height = 358.676
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
@@ -58,7 +59,7 @@ shape = SubResource( 2 )
 position = Vector2( -17.0418, 7.97229 )
 frames = SubResource( 3 )
 animation = "front"
-frame = 2
+frame = 4
 playing = true
 [connection signal="area_entered" from="Daño" to="." method="_on_Dao_area_entered"]
 [connection signal="body_entered" from="Daño" to="." method="_on_Dao_body_entered"]
