@@ -17,7 +17,6 @@ func _ready():
 	
 func image_button(num):
 	
-	
 	$"Jugar".change_status(0 == num)
 	$"Seleccionar".change_status(1 == num)
 	$"Opciones".change_status(2 == num)
