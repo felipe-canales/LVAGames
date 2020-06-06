@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/HealerEnemy/skin.png" type="Texture" id=1]
+[ext_resource path="res://nodos/Enemies/HealerEnemy.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 7.53408, 9.6696 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 8.04957, 10.2441 )
+
+[node name="HealerEnemy" type="KinematicBody2D"]
+position = Vector2( -0.64708, -0.647072 )
+scale = Vector2( 2.51054, 3.37911 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="DamageArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="DamageArea"]
+shape = SubResource( 2 )
+
+[node name="AnimatedSprite" type="Sprite" parent="."]
+position = Vector2( -0.914418, -0.119939 )
+scale = Vector2( 0.055247, 0.0560911 )
+texture = ExtResource( 1 )
+[connection signal="body_entered" from="DamageArea" to="." method="_on_DamageArea_body_entered"]

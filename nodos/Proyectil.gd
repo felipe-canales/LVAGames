@@ -18,7 +18,7 @@ func _on_Proyectil_body_entered(body):
 		"TileMap":
 			queue_free()
 	
-	if body.get_name().begins_with("Enemy"):
+	if "Enemy" in body.get_groups():
 		if !body.destroyed:
 			destroyed = true
 			body.shooted = true

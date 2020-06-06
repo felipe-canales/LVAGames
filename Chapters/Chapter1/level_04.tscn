@@ -5,10 +5,11 @@
 [ext_resource path="res://Assets/Mapa/Desierto/Suelo_exterior_sombra.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Mapa/Desierto/Cristal_2.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Mapa/Desierto/Margen_nuevo.png" type="Texture" id=5]
-[ext_resource path="res://nodos/Enemy.tscn" type="PackedScene" id=6]
+[ext_resource path="res://nodos/Enemies/Enemy.tscn" type="PackedScene" id=6]
 [ext_resource path="res://nodos/UI.tscn" type="PackedScene" id=7]
 [ext_resource path="res://nodos/Gun.tscn" type="PackedScene" id=8]
 [ext_resource path="res://nodos/Player.tscn" type="PackedScene" id=9]
+
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 51, 35, 147, 25, 164, 44, 161, 61, 39, 76, 30, 67, 31, 49 )
