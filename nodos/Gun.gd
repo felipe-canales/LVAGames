@@ -21,8 +21,13 @@ var min_enemy
 var enemies = []
 var enemies_not_visible = []
 
+var explosive_enemies = []
+
+onready var nav = $".../Navigation2D"
+
 func _ready():
-	pass
+	
+	explosive_enemies = get_tree().get_nodes_in_group("Explosive")
 	
 func check_destroy(target):
 	
@@ -43,8 +48,8 @@ func _process(delta):
 	
 	var min_dist = 999999999999
 	for enemy in enemies:
-
-		if !(enemy in enemies_not_visible):
+				
+		if !(enemy in enemies_not_visible) and !(enemy in explosive_enemies):
 			vector_distancia = enemy.get_global_position() - get_global_position()
 			distancia = vector_distancia.length_squared()
 			
@@ -83,6 +88,11 @@ func _physics_process(delta):
 
 		if bullet_fire:
 			bullet_cooldown_counter += delta
+
+
+func get_enemies():
+	
+	return enemies
 
 func _on_Gun_body_entered(body:Node):
 	

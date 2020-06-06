@@ -12,7 +12,6 @@ const ACCEL = 1.5
 
 
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -75,6 +74,7 @@ func _physics_process(delta):
 func be_damaged():
 	invincibility_timer = INVINCIBILTY_TIME
 	life -=1
+
 	get_parent().get_node("UI").set_life(life)
 	get_node("DamageArea/CollisionShape2D").set_deferred("disabled",true)
 	if life == 0:
@@ -97,5 +97,6 @@ func death():
 	get_tree().get_nodes_in_group("Chapters")[0].up_level()
 
 func _on_DamageArea_body_entered(body):
-	if body.get_name().begins_with("Enemy") and invincibility_timer <= 0:
+	if "Enemy" in body.get_groups() and invincibility_timer <= 0:
 		be_damaged()
+

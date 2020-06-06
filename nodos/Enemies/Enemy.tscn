@@ -18,13 +18,11 @@
 [ext_resource path="res://Assets/Enemigo_1/Front/Enemigo_Front_7.svg" type="Texture" id=17]
 [ext_resource path="res://Assets/Enemigo_1/Front/Enemigo_Front_8.svg" type="Texture" id=18]
 
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 116.239
-height = 335.202
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 122.661, 278.06 )
 
-[sub_resource type="CapsuleShape2D" id=2]
-radius = 128.232
-height = 358.676
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 136.149, 292.782 )
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
@@ -48,18 +46,18 @@ collision_mask = 0
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
+shape = SubResource( 4 )
 
 [node name="Daño" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Daño"]
-shape = SubResource( 2 )
+shape = SubResource( 5 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -17.0418, 7.97229 )
 frames = SubResource( 3 )
 animation = "front"
-frame = 5
+frame = 1
 playing = true
 [connection signal="area_entered" from="Daño" to="." method="_on_Dao_area_entered"]
 [connection signal="body_entered" from="Daño" to="." method="_on_Dao_body_entered"]

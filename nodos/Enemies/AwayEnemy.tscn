@@ -4,10 +4,10 @@
 [ext_resource path="res://nodos/Enemies/AwayEnemy.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 63.4599, 26.6221 )
+extents = Vector2( 19.8788, 32.602 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 66.2533, 28.7171 )
+extents = Vector2( 23.6078, 37.0466 )
 
 [node name="AwayEnemy" type="KinematicBody2D" groups=[
 "Enemy",

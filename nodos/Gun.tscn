@@ -3,12 +3,14 @@
 [ext_resource path="res://nodos/Gun.gd" type="Script" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 38.0001, 30 )
+extents = Vector2( 15.5169, 19.282 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 382.343, 258.996 )
 
-[node name="Gun" type="Area2D"]
+[node name="Gun" type="Area2D" groups=[
+"Gun",
+]]
 scale = Vector2( 0.930315, 1.13266 )
 script = ExtResource( 1 )
 
