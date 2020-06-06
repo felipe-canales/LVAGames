@@ -2,8 +2,10 @@ extends KinematicBody2D
 
 export var life = 5
 export var INVINCIBILTY_TIME = 0.5
+export var HEAL_TIME = 0.5
 var vel = Vector2(0,0)
 var invincibility_timer = 0
+var heal_timer = 0
 const TARGET_AXIS = 100
 const TARGET_DIAG = TARGET_AXIS / 1.41
 const ACCEL = 1.5
@@ -60,8 +62,15 @@ func _physics_process(delta):
 			show()
 			get_node("DamageArea/CollisionShape2D").set_deferred("disabled",false)
 			
-
-	
+	if heal_timer == HEAL_TIME:
+		
+		life+=1
+		get_parent().get_node("UI").set_life(life)
+		heal_timer -= delta
+		
+	elif heal_timer >= 0:
+		
+		heal_timer-=delta
 
 func be_damaged():
 	invincibility_timer = INVINCIBILTY_TIME
@@ -71,6 +80,13 @@ func be_damaged():
 	if life == 0:
 		invincibility_timer = 0
 		death()
+		
+func be_heal():
+	
+	if heal_timer < 0:
+		
+		heal_timer = HEAL_TIME
+		
 	
 func death():
 	#hide()

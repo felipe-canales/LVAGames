@@ -19,9 +19,8 @@
 [ext_resource path="res://Assets/Tentoria/Tentoria_Side/P_Side_5.png" type="Texture" id=17]
 [ext_resource path="res://Assets/Tentoria/Tentoria_Side/P_Side_3.png" type="Texture" id=18]
 
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 26.1218
-height = 36.2097
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 19.2367, 40.5661 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 21.2864, 45.6095 )
@@ -39,7 +38,9 @@ animations = [ {
 "speed": 7.0
 } ]
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D" groups=[
+"Player",
+]]
 scale = Vector2( 1.103, 0.984 )
 script = ExtResource( 2 )
 
@@ -55,6 +56,6 @@ shape = SubResource( 2 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 3 )
 animation = "stand"
-frame = 4
+frame = 5
 playing = true
 [connection signal="body_entered" from="DamageArea" to="." method="_on_DamageArea_body_entered"]
