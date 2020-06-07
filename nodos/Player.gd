@@ -6,6 +6,7 @@ export var HEAL_TIME = 0.5
 var vel = Vector2(0,0)
 var invincibility_timer = 0
 var heal_timer = 0
+var flip = false
 const TARGET_AXIS = 100
 const TARGET_DIAG = TARGET_AXIS / 1.41
 const ACCEL = 1.5
@@ -27,6 +28,21 @@ func _process(delta):
 	if(len(get_tree().get_nodes_in_group("Enemy")) == 0):
 		
 		get_parent().get_node("UI").show_game_over()
+	
+	var min_vel = 80
+	var diag_margin = 1.1
+	# walking right
+	if vel.x > min_vel and (diag_margin * vel.x) > abs(vel.y):
+		flip = false
+		update_animation("side")
+	# walking left
+	elif vel.x < -min_vel and -(diag_margin * vel.x) > abs(vel.y):
+		flip = true
+		update_animation("side")
+	# walking forwards, backwards or standing
+	else:
+		flip = false
+		update_animation("stand")
 
 
 func _physics_process(delta):
@@ -100,3 +116,8 @@ func _on_DamageArea_body_entered(body):
 	if "Enemy" in body.get_groups() and invincibility_timer <= 0:
 		be_damaged()
 
+func update_animation(animation):
+	var sprite = get_node("AnimatedSprite")
+	if sprite.animation != animation:
+		sprite.animation = animation
+	sprite.set_flip_h(flip)

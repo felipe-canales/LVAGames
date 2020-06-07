@@ -19,8 +19,8 @@
 [ext_resource path="res://Assets/Tentoria/Tentoria_Side/P_Side_5.png" type="Texture" id=17]
 [ext_resource path="res://Assets/Tentoria/Tentoria_Side/P_Side_3.png" type="Texture" id=18]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 19.2367, 40.5661 )
+[sub_resource type="ConvexPolygonShape2D" id=1]
+points = PoolVector2Array( 2, -24, 19, -2, 12, 30, 2, 42, -9, 30, -16, -2 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 21.2864, 45.6095 )
