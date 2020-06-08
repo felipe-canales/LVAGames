@@ -9,11 +9,13 @@ var invincibility_timer = 0
 export var INVINCIBILTY_TIME = 0.5
 
 # Velocidad a la que se acerca el enemigo
-var velocidad = 4000
+var velocidad = 2000
 # Distancia entre el enemigo y el player
 var distancia = 200
 
 export var life = 1
+
+onready var animated_sprite:AnimatedSprite = $AnimatedSprite
 
 # Por definir segun la agrupacion de nodos
 onready var player = get_parent().get_parent().get_node("Player")
@@ -33,20 +35,16 @@ func _physics_process(delta):
 	var dir_x = player.global_position.x - global_position.x
 	var dir_y = player.global_position.y - global_position.y
 	
-	if dist<distancia:
+	if dir_x*dir_x > dir_y*dir_y:
 		
-		movcont_x = -dir_x
-		movcont_y = -dir_y
-		player.be_heal()
-		
-	elif dist > distancia -  1 and dist < distancia +1:
-		
-		movcont_x = 0
-		movcont_y = 0
+		animated_sprite.set_animation("side")
 		
 	else:
-		movcont_x = dir_x
-		movcont_y = dir_y
+		animated_sprite.set_animation("stand")
+	
+
+	movcont_x = dir_x
+	movcont_y = dir_y
 		
 	if invincibility_timer > 0:
 		invincibility_timer -= delta
@@ -75,5 +73,6 @@ func _on_Dao_area_entered(area:Area2D):
 func _on_DamageArea_body_entered(body:KinematicBody2D):
 
 	if body != null:
-		if body.get_name().begins_with("Enemy") and invincibility_timer <= 0:
+		if "Enemy" in body.get_groups() and invincibility_timer <= 0:
 			be_damaged()
+			

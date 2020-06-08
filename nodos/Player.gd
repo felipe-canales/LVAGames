@@ -44,10 +44,8 @@ func _process(delta):
 		flip = false
 		update_animation("stand")
 
-
 func _physics_process(delta):
 	
-
 	var target_x = 0
 	var target_y = 0
 	# Set direction
@@ -77,15 +75,11 @@ func _physics_process(delta):
 			show()
 			get_node("DamageArea/CollisionShape2D").set_deferred("disabled",false)
 			
-	if heal_timer == HEAL_TIME:
-		
-		life+=1
-		get_parent().get_node("UI").set_life(life)
+	if heal_timer > 0:
 		heal_timer -= delta
-		
-	elif heal_timer >= 0:
-		
-		heal_timer-=delta
+		if heal_timer <= 0:
+			show()
+			get_node("DamageArea/CollisionShape2D").set_deferred("disabled",false)
 
 func be_damaged():
 	invincibility_timer = INVINCIBILTY_TIME
@@ -99,11 +93,12 @@ func be_damaged():
 		
 func be_heal():
 	
-	if heal_timer < 0:
+	heal_timer = HEAL_TIME
+	life +=1
+
+	get_parent().get_node("UI").set_life(life)
+	get_node("DamageArea/CollisionShape2D").set_deferred("disabled",true)
 		
-		heal_timer = HEAL_TIME
-		
-	
 func death():
 	#hide()
 	#get_node("CollisionShape2D").set_deferred("disabled", true)
@@ -115,6 +110,9 @@ func death():
 func _on_DamageArea_body_entered(body):
 	if "Enemy" in body.get_groups() and invincibility_timer <= 0:
 		be_damaged()
+		
+	if "Healer" in body.get_groups() and heal_timer <= 0:
+		be_heal()
 
 func update_animation(animation):
 	var sprite = get_node("AnimatedSprite")

@@ -23,7 +23,6 @@ var enemies_not_visible = []
 
 var explosive_enemies = []
 
-onready var nav = $".../Navigation2D"
 
 func _ready():
 	
