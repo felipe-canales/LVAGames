@@ -1,14 +1,58 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=33 format=2]
 
-[ext_resource path="res://Assets/DashEnemy/normal.png" type="Texture" id=1]
+[ext_resource path="res://Assets/DashEnemy/Front/front_6.svg" type="Texture" id=1]
 [ext_resource path="res://nodos/Enemies/ChargerEnemy.gd" type="Script" id=2]
-[ext_resource path="res://nodos/Enemies/Sprite.gd" type="Script" id=3]
+[ext_resource path="res://Assets/DashEnemy/Front/front_7.svg" type="Texture" id=3]
+[ext_resource path="res://Assets/DashEnemy/Front/front_8.svg" type="Texture" id=4]
+[ext_resource path="res://Assets/DashEnemy/Front/front_1.svg" type="Texture" id=5]
+[ext_resource path="res://Assets/DashEnemy/Front/front_3.svg" type="Texture" id=6]
+[ext_resource path="res://Assets/DashEnemy/Front/front_2.svg" type="Texture" id=7]
+[ext_resource path="res://Assets/DashEnemy/Front/front_4.svg" type="Texture" id=8]
+[ext_resource path="res://Assets/DashEnemy/Front/front_5.svg" type="Texture" id=9]
+[ext_resource path="res://Assets/DashEnemy/Explode/ex_6.svg" type="Texture" id=10]
+[ext_resource path="res://Assets/DashEnemy/Side/side_6.svg" type="Texture" id=11]
+[ext_resource path="res://Assets/DashEnemy/Explode/ex_3.svg" type="Texture" id=12]
+[ext_resource path="res://Assets/DashEnemy/Side/side_2.svg" type="Texture" id=13]
+[ext_resource path="res://Assets/DashEnemy/Explode/ex_5.svg" type="Texture" id=14]
+[ext_resource path="res://Assets/DashEnemy/Side/side_3.svg" type="Texture" id=15]
+[ext_resource path="res://Assets/DashEnemy/Explode/ex_7.svg" type="Texture" id=16]
+[ext_resource path="res://Assets/DashEnemy/Side/side_4.svg" type="Texture" id=17]
+[ext_resource path="res://Assets/DashEnemy/Side/side_7.svg" type="Texture" id=18]
+[ext_resource path="res://Assets/DashEnemy/Explode/ex_1.svg" type="Texture" id=19]
+[ext_resource path="res://Assets/DashEnemy/Explode/ex_2.svg" type="Texture" id=20]
+[ext_resource path="res://Assets/DashEnemy/Explode/ex_9.svg" type="Texture" id=21]
+[ext_resource path="res://Assets/DashEnemy/Side/side_8.svg" type="Texture" id=22]
+[ext_resource path="res://Assets/DashEnemy/Explode/ex_8.svg" type="Texture" id=23]
+[ext_resource path="res://Assets/DashEnemy/Side/side_5.svg" type="Texture" id=24]
+[ext_resource path="res://Assets/DashEnemy/Explode/ex_10.svg" type="Texture" id=25]
+[ext_resource path="res://Assets/DashEnemy/Explode/ex_11.svg" type="Texture" id=26]
+[ext_resource path="res://Assets/DashEnemy/Explode/ex_12.svg" type="Texture" id=27]
+[ext_resource path="res://Assets/DashEnemy/Side/side_1.svg" type="Texture" id=28]
+[ext_resource path="res://Assets/DashEnemy/Explode/ex_4.svg" type="Texture" id=29]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 24.5252, 24.6236 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 25.1209, 25.853 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 28 ), ExtResource( 13 ), ExtResource( 15 ), ExtResource( 17 ), ExtResource( 24 ), ExtResource( 11 ), ExtResource( 18 ), ExtResource( 22 ) ],
+"loop": true,
+"name": "side",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 1 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "stand",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 19 ), ExtResource( 20 ), ExtResource( 12 ), ExtResource( 29 ), ExtResource( 14 ), ExtResource( 10 ), ExtResource( 16 ), ExtResource( 23 ), ExtResource( 21 ), ExtResource( 25 ), ExtResource( 26 ), null, ExtResource( 27 ) ],
+"loop": true,
+"name": "explode",
+"speed": 13.0
+} ]
 
 [node name="ChargerEnemy" type="KinematicBody2D" groups=[
 "Enemy",
@@ -26,8 +70,8 @@ shape = SubResource( 1 )
 position = Vector2( 4.95026, 6.32567 )
 shape = SubResource( 2 )
 
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 2.77791, 5.68921 )
-scale = Vector2( 0.0470723, 0.0709536 )
-texture = ExtResource( 1 )
-script = ExtResource( 3 )
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 3 )
+animation = "explode"
+frame = 1
+playing = true
