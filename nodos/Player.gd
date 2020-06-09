@@ -57,6 +57,12 @@ func _physics_process(delta):
 		target_y += 1
 	if Input.is_action_pressed("player_up"):
 		target_y -= 1
+		
+	if Input.is_action_just_pressed("daño"):
+		
+		life -=1
+		get_parent().get_node("UI").set_life(life)
+		
 	# Higher speed if not moving diagonally
 	if (target_x and target_y):
 		target_x *= TARGET_DIAG

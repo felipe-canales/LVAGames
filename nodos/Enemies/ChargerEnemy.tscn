@@ -33,7 +33,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 24.5252, 24.6236 )
 
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="SpriteFrames" id=2]
 animations = [ {
 "frames": [ ExtResource( 28 ) ],
 "loop": true,
@@ -56,7 +56,7 @@ animations = [ {
 "speed": 13.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 25.1209, 25.853 )
 
 [node name="ChargerEnemy" type="KinematicBody2D" groups=[
@@ -72,7 +72,7 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 4.91265, 2.13299 )
 scale = Vector2( 0.107928, 0.100904 )
-frames = SubResource( 3 )
+frames = SubResource( 2 )
 animation = "wait"
 speed_scale = 0.9
 playing = true
@@ -81,5 +81,5 @@ playing = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 4.95026, 6.32567 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

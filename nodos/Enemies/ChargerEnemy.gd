@@ -18,9 +18,12 @@ var TIME_CHARGER = 2
 # Velocidad a la que se acerca el enemigo
 var velocidad = 4000
 # Distancia entre el enemigo y el player
-var distancia = 200
+var distancia_seguimiento = 400
+var distancia_ataque = 200
 
 export var life = 1
+
+var attack = false
 
 # Por definir segun la agrupacion de nodos
 onready var player = get_parent().get_parent().get_node("Player")
@@ -44,7 +47,7 @@ func _ready():
 
 func _physics_process(delta):
 	
-	print(time_charge)
+
 	if life == 0:
 			destroyed = true
 			
@@ -52,11 +55,11 @@ func _physics_process(delta):
 	var dir_x = player.global_position.x - global_position.x
 	var dir_y = player.global_position.y - global_position.y
 	
+
+
 	if exploted:
 		be_exploted()
 		
-	
-	
 	if time_wait_charge != 0:
 		
 		time_wait_charge -= delta
@@ -65,18 +68,24 @@ func _physics_process(delta):
 		
 		be_exploted()
 		
-	elif dist>distancia and !charger and !exploted:
+	if dist<distancia_seguimiento and !charger and !exploted:
 		
 		movcont_x = dir_x
 		movcont_y = dir_y
 		
+	if dist>distancia_seguimiento and !charger and !exploted:
+		
+		movcont_x = 0
+		movcont_y = 0
+		
+	
 	elif charger and time_wait_charge <= 0 and !exploted:
 		
 		movcont_x = dir_charger_x
 		movcont_y = dir_charger_y
 		time_charge += delta
 
-	elif dist < distancia and !charger:
+	elif dist < distancia_ataque and !charger:
 		
 		animated_sprite.set_animation("wait")
 		movcont_x = 0
@@ -138,14 +147,12 @@ func _on_DamageArea_body_entered(body:KinematicBody2D):
 			be_damaged()
 
 func _on_Area2D_body_entered(body):
-	
+		
 	if body != null:
 		if "Player" in body.get_groups():
 			exploted = true
-		match body.get_class():
-			"TileMap":
-				if charger:
-					exploted = true
 			
+		if body.get_class().begins_with("TileMap"):
 
-	
+			if charger:
+				exploted = true

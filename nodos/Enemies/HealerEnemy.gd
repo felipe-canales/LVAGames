@@ -8,6 +8,8 @@ var scale_up = false
 var invincibility_timer = 0
 export var INVINCIBILTY_TIME = 0.5
 
+var follow = false
+
 # Velocidad a la que se acerca el enemigo
 var velocidad = 2000
 # Distancia entre el enemigo y el player
@@ -24,35 +26,37 @@ var movcont_x = 0
 var movcont_y = 0
 
 func _ready():
-	pass 
+	animated_sprite.set_animation("stand")
 
 func _physics_process(delta):
 	
 	if life == 0:
 			destroyed = true
 			
-	var dist = player.global_position.distance_to(global_position)
-	var dir_x = player.global_position.x - global_position.x
-	var dir_y = player.global_position.y - global_position.y
+	if follow:
+			
+		var dist = player.global_position.distance_to(global_position)
+		var dir_x = player.global_position.x - global_position.x
+		var dir_y = player.global_position.y - global_position.y
+		
+		if dir_x*dir_x > dir_y*dir_y:
+			
+			animated_sprite.set_animation("side")
+			
+		else:
+			animated_sprite.set_animation("stand")
+		
 	
-	if dir_x*dir_x > dir_y*dir_y:
-		
-		animated_sprite.set_animation("side")
-		
-	else:
-		animated_sprite.set_animation("stand")
-	
-
-	movcont_x = dir_x
-	movcont_y = dir_y
-		
-	if invincibility_timer > 0:
-		invincibility_timer -= delta
-		if invincibility_timer <= 0:
-			show()
-			get_node("DamageArea/CollisionShape2D2").set_deferred("disabled",false)
-		
-	move_and_slide(Vector2(movcont_x, movcont_y).normalized() * velocidad * delta)
+		movcont_x = dir_x
+		movcont_y = dir_y
+			
+		if invincibility_timer > 0:
+			invincibility_timer -= delta
+			if invincibility_timer <= 0:
+				show()
+				get_node("DamageArea/CollisionShape2D2").set_deferred("disabled",false)
+			
+		move_and_slide(Vector2(movcont_x, movcont_y).normalized() * velocidad * delta)
 	
 func be_damaged():
 	invincibility_timer = INVINCIBILTY_TIME
@@ -76,3 +80,9 @@ func _on_DamageArea_body_entered(body:KinematicBody2D):
 		if "Enemy" in body.get_groups() and invincibility_timer <= 0:
 			be_damaged()
 			
+func _on_Area2D_body_entered(body):
+	if body != null:
+		if "Player" in body.get_groups():
+			follow = true # Replace with function body.
+		else:
+			follow = false
