@@ -4,8 +4,9 @@ var nivel1 = "res://Chapters/Chapter1/level_01.tscn"
 var nivel2 = "res://Chapters/Chapter1/level_02.tscn"
 var nivel3 = "res://Chapters/Chapter1/level_03.tscn"
 var nivel4 = "res://Chapters/Chapter1/level_04.tscn"
+var nivel5 = "res://Chapters/Chapter1/level_05.tscn"
 
-var arreglo_niveles = [nivel1, nivel2, nivel3, nivel4]
+var arreglo_niveles = [nivel1, nivel2, nivel5, nivel3, nivel4]
 
 var actual_nivel
 var num_nivel 
