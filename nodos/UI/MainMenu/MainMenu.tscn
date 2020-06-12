@@ -35,7 +35,7 @@ margin_right = 616.0
 stretch_mode = 3
 
 [node name="back" type="Sprite" parent="."]
-position = Vector2( -400.627, 0.57373 )
+position = Vector2( -400, -4.47035e-08 )
 scale = Vector2( 0.773254, 0.792008 )
 z_index = -1
 texture = ExtResource( 11 )

@@ -15,6 +15,11 @@ position = Vector2( 125, 125 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true
+limit_left = -150
+limit_top = -150
+limit_right = 950
+limit_bottom = 1750
+editor_draw_limits = true
 
 [node name="UI" parent="." instance=ExtResource( 7 )]
 
