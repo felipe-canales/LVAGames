@@ -1,11 +1,13 @@
 extends CanvasLayer
 
 onready var pause = preload("res://nodos/UI/Pausa/Pausa.tscn")
+var current_saturation
+var objective_saturation
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	set_life(5)
-
+	current_saturation = 0.0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -14,12 +16,20 @@ func _process(delta):
 	
 		var inPause = pause.instance()
 		add_child(inPause)
+		
+func _physics_process(delta):
+	# smoothly change saturation
+	if current_saturation < objective_saturation:
+		current_saturation += 0.005
+		get_node("Shader").get_material().set_shader_param("saturation", current_saturation)
+	elif current_saturation > objective_saturation:
+		current_saturation -= 0.005
+		get_node("Shader").get_material().set_shader_param("saturation", current_saturation)
 
 
 func set_life(value):
 	# set shader saturation
-	get_node("Shader").get_material().set_shader_param("saturation", 1 - (value/5.0))
-	print(1 - (value/5.0))
+	objective_saturation = 1 - (value/5.0)
 	# for heart
 	for i in range(1, 6):
 		var node = get_node("Heart" + str(i))
