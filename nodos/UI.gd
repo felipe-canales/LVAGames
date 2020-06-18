@@ -1,14 +1,10 @@
 extends CanvasLayer
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 onready var pause = preload("res://nodos/UI/Pausa/Pausa.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	set_life(5)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -21,6 +17,9 @@ func _process(delta):
 
 
 func set_life(value):
+	# set shader saturation
+	get_node("Shader").get_material().set_shader_param("saturation", 1 - (value/5.0))
+	print(1 - (value/5.0))
 	# for heart
 	for i in range(1, 6):
 		var node = get_node("Heart" + str(i))
