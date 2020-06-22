@@ -1,7 +1,15 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Assets/AwayEnemy/Front/Front_1.svg" type="Texture" id=1]
 [ext_resource path="res://nodos/Enemies/AwayEnemy.gd" type="Script" id=2]
+[ext_resource path="res://Assets/AwayEnemy/Front/Front_6.svg" type="Texture" id=3]
+[ext_resource path="res://Assets/AwayEnemy/Front/Front_4.svg" type="Texture" id=4]
+[ext_resource path="res://Assets/AwayEnemy/Front/Front_8.svg" type="Texture" id=5]
+[ext_resource path="res://Assets/AwayEnemy/Front/Front_2.svg" type="Texture" id=6]
+[ext_resource path="res://Assets/AwayEnemy/Front/Front_5.svg" type="Texture" id=7]
+[ext_resource path="res://Assets/AwayEnemy/Front/Front_3.svg" type="Texture" id=8]
+[ext_resource path="res://Assets/AwayEnemy/Front/Front_7.svg" type="Texture" id=9]
+[ext_resource path="res://Assets/AwayEnemy/Front/Front_9.svg" type="Texture" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 19.8788, 32.602 )
@@ -11,10 +19,10 @@ extents = Vector2( 23.6078, 37.0466 )
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ ExtResource( 1 ) ],
+"frames": [ ExtResource( 1 ), ExtResource( 6 ), ExtResource( 8 ), ExtResource( 4 ), ExtResource( 7 ), ExtResource( 3 ), ExtResource( 9 ), ExtResource( 5 ), ExtResource( 10 ) ],
 "loop": true,
 "name": "stand",
-"speed": 5.0
+"speed": 9.0
 } ]
 
 [node name="AwayEnemy" type="KinematicBody2D" groups=[
@@ -38,4 +46,6 @@ shape = SubResource( 2 )
 scale = Vector2( 0.122, 0.11 )
 frames = SubResource( 3 )
 animation = "stand"
+frame = 2
+playing = true
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]

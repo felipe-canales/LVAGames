@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="200px"
+	 height="200px" viewBox="0 0 200 200" enable-background="new 0 0 200 200" xml:space="preserve">
+<g id="Layer_1">
+	<rect fill="#AD6989" stroke="#925874" stroke-width="2" stroke-miterlimit="10" width="200" height="71.854"/>
+	<rect y="71.854" fill="#703368" stroke="#4C5481" stroke-miterlimit="10" width="200" height="128.146"/>
+	<rect y="71.854" fill="#562349" stroke="#562349" stroke-miterlimit="10" width="11.406" height="128.146"/>
+	<rect x="188.594" y="71.854" fill="#562349" stroke="#562349" stroke-miterlimit="10" width="11.406" height="128.146"/>
+	<rect x="11.406" y="71.854" fill="#562349" stroke="#562349" stroke-miterlimit="10" width="177.188" height="19.863"/>
+	
+		<rect x="80.249" y="125.095" transform="matrix(0.7009 0.7132 -0.7132 0.7009 134.2358 -28.414)" fill="#A46B67" stroke="#A46B67" stroke-miterlimit="10" width="41.501" height="41.527"/>
+	<polygon fill="#BA7A7F" stroke="#BA7A7F" stroke-miterlimit="10" points="101.07,154.858 71.837,145.858 100.824,174.142 	"/>
+	<polygon fill="#F9B5B4" stroke="#F9B5B4" stroke-miterlimit="10" points="101.07,153.858 71.837,145.858 101.316,117.575 	"/>
+	<polygon fill="#F7A199" stroke="#F7A199" stroke-miterlimit="10" points="130.354,146.104 102.07,153.858 102.316,117.575 	"/>
+</g>
+<g id="Layer_2">
+	
+		<rect x="18.046" y="91.717" opacity="0.6" fill="#562349" stroke="#562349" stroke-miterlimit="10" width="170.082" height="7.078"/>
+	
+		<rect x="11.872" y="91.717" opacity="0.6" fill="#562349" stroke="#562349" stroke-miterlimit="10" width="5.708" height="108.283"/>
+	<polygon opacity="0.6" fill="#562349" stroke="#562349" stroke-miterlimit="10" points="130.354,148.104 100.735,175.212 
+		86.858,162.689 107.605,192.488 	"/>
+	<polygon fill="#A46B67" stroke="#A46B67" stroke-miterlimit="10" points="158.966,160.649 143.935,145.903 159.239,131.401 
+		174.271,146.148 	"/>
+	<polygon fill="#BA7A7F" stroke="#BA7A7F" stroke-miterlimit="10" points="159.139,150.51 144.033,146.025 159.012,160.116 	"/>
+	<polygon fill="#F9B5B4" stroke="#F9B5B4" stroke-miterlimit="10" points="159.139,150.011 144.033,146.025 159.267,131.935 	"/>
+	<polygon fill="#F7A199" stroke="#F7A199" stroke-miterlimit="10" points="174.271,146.148 159.656,150.011 159.783,131.935 	"/>
+	<polygon opacity="0.6" fill="#562349" stroke="#562349" stroke-miterlimit="10" points="174.271,147.145 158.966,160.649 
+		151.796,154.411 162.516,169.257 	"/>
+	<polygon fill="#A46B67" stroke="#A46B67" stroke-miterlimit="10" points="40.229,160.331 25.198,145.585 40.502,131.083 
+		55.534,145.83 	"/>
+	<polygon fill="#BA7A7F" stroke="#BA7A7F" stroke-miterlimit="10" points="40.402,150.191 25.296,145.707 40.275,159.798 	"/>
+	<polygon fill="#F9B5B4" stroke="#F9B5B4" stroke-miterlimit="10" points="40.402,149.692 25.296,145.707 40.53,131.616 	"/>
+	<polygon fill="#F7A199" stroke="#F7A199" stroke-miterlimit="10" points="55.534,145.83 40.919,149.692 41.046,131.616 	"/>
+	<polygon opacity="0.6" fill="#562349" stroke="#562349" stroke-miterlimit="10" points="55.534,146.826 40.229,160.331 
+		33.059,154.093 43.779,168.938 	"/>
+</g>
+</svg>
