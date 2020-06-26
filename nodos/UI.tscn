@@ -8,7 +8,8 @@
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
 
-uniform float saturation = 1.0;
+uniform float saturation = 0.0;
+uniform float brightness = 0.0;
 
 vec3 rgb2hsv(vec3 c) {
     vec4 K = vec4(0.0, -1.0 / 3.0, 2.0 / 3.0, -1.0);
@@ -28,15 +29,17 @@ vec3 hsv2rgb(vec3 c) {
 
 void fragment() {
 	vec3 c = rgb2hsv(textureLod(SCREEN_TEXTURE, SCREEN_UV, 0.0).rgb); // xyz -> hsv
-	c = hsv2rgb(vec3(c.x, c.y * saturation, c.z * (0.7 + saturation * 0.3)));
-	COLOR = vec4(c.x, c.y, c.z, 1.0);
+	c = hsv2rgb(vec3(c.x, c.y * saturation, c.z * (0.7 + saturation * 0.3) * brightness));
+	COLOR.rgb = c;
 }"
 
 [sub_resource type="ShaderMaterial" id=2]
 shader = SubResource( 1 )
 shader_param/saturation = 1.0
+shader_param/brightness = 0.0
 
 [node name="UI" type="CanvasLayer"]
+pause_mode = 2
 script = ExtResource( 1 )
 
 [node name="Heart1" type="Sprite" parent="."]
@@ -90,4 +93,6 @@ texture = ExtResource( 3 )
 
 [node name="Shader" type="Sprite" parent="."]
 material = SubResource( 2 )
+position = Vector2( 537.5, 300 )
+scale = Vector2( 0.434695, 0.433526 )
 texture = ExtResource( 4 )

@@ -3,11 +3,20 @@ extends CanvasLayer
 onready var pause = preload("res://nodos/UI/Pausa/Pausa.tscn")
 var current_saturation
 var objective_saturation
+var current_brightness
+var objective_brightness
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	set_life(5)
-	current_saturation = 0.0
+	current_saturation = 0.1
+	objective_saturation = 0.0
+	current_brightness = 0.0
+	objective_brightness = 1.0
+	get_node("Shader").get_material().set_shader_param("saturation", current_saturation)
+	get_node("Shader").get_material().set_shader_param("brightness", current_brightness)
+	
+	get_tree().paused = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -25,6 +34,19 @@ func _physics_process(delta):
 	elif current_saturation > objective_saturation:
 		current_saturation -= 0.005
 		get_node("Shader").get_material().set_shader_param("saturation", current_saturation)
+	# fade in/out at start/end of level
+	if current_brightness < objective_brightness - 0.01:
+		current_brightness += 0.05
+		get_node("Shader").get_material().set_shader_param("brightness", current_brightness)
+		# fade in completed
+		if (abs(current_brightness - objective_brightness) < 0.01):
+			get_tree().paused = false
+	elif current_brightness > objective_brightness + 0.01:
+		current_brightness -= 0.05
+		get_node("Shader").get_material().set_shader_param("brightness", current_brightness)
+		# fade out completed
+		#if current_brightness == objective_brightness:
+			#pass
 
 
 func set_life(value):
