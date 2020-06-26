@@ -110,8 +110,9 @@ func death():
 	#get_node("CollisionShape2D").set_deferred("disabled", true)
 	#get_tree().paused = true
 	
-	get_tree().reload_current_scene()
-	get_tree().get_nodes_in_group("Chapters")[0].up_level()
+	#get_tree().reload_current_scene()
+	#get_tree().get_nodes_in_group("Chapters")[0].up_level()
+	get_parent().get_node("UI").next_level_fade_out()
 
 func _on_DamageArea_body_entered(body):
 	if "Enemy" in body.get_groups() and invincibility_timer <= 0:

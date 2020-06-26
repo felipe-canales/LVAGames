@@ -34,19 +34,23 @@ func _physics_process(delta):
 	elif current_saturation > objective_saturation:
 		current_saturation -= 0.005
 		get_node("Shader").get_material().set_shader_param("saturation", current_saturation)
+		
 	# fade in/out at start/end of level
 	if current_brightness < objective_brightness - 0.01:
 		current_brightness += 0.05
 		get_node("Shader").get_material().set_shader_param("brightness", current_brightness)
 		# fade in completed
+		# add here new condition for level start
 		if (abs(current_brightness - objective_brightness) < 0.01):
+			# maybe do something and set timer before starting level
 			get_tree().paused = false
 	elif current_brightness > objective_brightness + 0.01:
 		current_brightness -= 0.05
 		get_node("Shader").get_material().set_shader_param("brightness", current_brightness)
 		# fade out completed
-		#if current_brightness == objective_brightness:
-			#pass
+		if (abs(current_brightness - objective_brightness) < 0.01):
+			get_tree().get_nodes_in_group("Chapters")[0].up_level()
+			
 
 
 func set_life(value):
@@ -61,6 +65,11 @@ func set_life(value):
 		# show empty heart
 		else:
 			node.frame = 1 
+
+func next_level_fade_out():
+	get_tree().paused = true
+	# maybe add timer before starting the fade out
+	objective_brightness = 0.0
 
 func show_game_over():
 	get_node("GameOverMessage").show()
