@@ -49,6 +49,7 @@ func _physics_process(delta):
 		get_node("Shader").get_material().set_shader_param("brightness", current_brightness)
 		# fade out completed
 		if (abs(current_brightness - objective_brightness) < 0.01):
+			get_tree().paused = false
 			get_tree().get_nodes_in_group("Chapters")[0].up_level()
 			
 
