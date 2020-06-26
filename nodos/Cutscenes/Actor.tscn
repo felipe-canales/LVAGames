@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://nodos/Cutscenes/Actor.gd" type="Script" id=1]
+
+
+
+[node name="Actor" type="KinematicBody2D"]
+position = Vector2( 750, 450 )
+script = ExtResource( 1 )
