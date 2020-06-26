@@ -5,6 +5,7 @@ var current_saturation
 var objective_saturation
 var current_brightness
 var objective_brightness
+var pausa = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,13 +18,22 @@ func _ready():
 	get_node("Shader").get_material().set_shader_param("brightness", current_brightness)
 	
 	get_tree().paused = true
+	
+func _pausa():
+	
+	if pausa:
+		pausa = false
+	else:
+		pausa = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 
-	if Input.is_action_just_pressed("pausa"):
-	
+	if Input.is_action_just_pressed("pausa") and !pausa:
+
+		_pausa()
 		var inPause = pause.instance()
+		inPause.pausa()
 		add_child(inPause)
 		
 func _physics_process(delta):
