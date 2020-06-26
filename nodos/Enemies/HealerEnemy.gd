@@ -84,5 +84,4 @@ func _on_Area2D_body_entered(body):
 	if body != null:
 		if "Player" in body.get_groups():
 			follow = true # Replace with function body.
-		else:
-			follow = false
+

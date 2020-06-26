@@ -60,7 +60,7 @@ position = Vector2( -0.277174, 0.183649 )
 scale = Vector2( 0.044, 0.0410137 )
 frames = SubResource( 3 )
 animation = "stand"
-frame = 6
+frame = 7
 playing = true
 
 [node name="Area2D" type="Area2D" parent="."]

@@ -80,6 +80,9 @@ func _physics_process(delta):
 				node._unpaused()
 				
 			reiniciar:
+				var bullets = get_tree().get_nodes_in_group("Bullets")
+				for bull in bullets:
+					bull.queue_free()
 				get_tree().reload_current_scene()
 				
 			opciones:
