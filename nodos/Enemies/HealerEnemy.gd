@@ -11,7 +11,7 @@ export var INVINCIBILTY_TIME = 0.5
 var follow = false
 
 # Velocidad a la que se acerca el enemigo
-var velocidad = 2000
+var velocidad = 4000
 # Distancia entre el enemigo y el player
 var distancia = 200
 
