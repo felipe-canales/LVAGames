@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 export var life = 5
+export var max_life = 5
 export var INVINCIBILTY_TIME = 0.5
 export var HEAL_TIME = 0.5
 var vel = Vector2(0,0)
@@ -99,11 +100,13 @@ func be_damaged():
 		
 func be_heal():
 	
-	heal_timer = HEAL_TIME
-	life +=1
-
-	get_parent().get_node("UI").set_life(life)
-	get_node("DamageArea/CollisionShape2D").set_deferred("disabled",true)
+	if life < max_life:
+		
+		heal_timer = HEAL_TIME
+		life +=1
+	
+		get_parent().get_node("UI").set_life(life)
+		get_node("DamageArea/CollisionShape2D").set_deferred("disabled",true)
 		
 func death():
 	#hide()
