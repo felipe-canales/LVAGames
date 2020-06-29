@@ -2,8 +2,8 @@ extends TextureRect
 
 var active = false
 
-var image_reinciar = load("res://Assets/UI/reiniciar.png")
-var image_reiniciar_ =load("res://Assets/UI/reiniciar_.png")
+var image_reinciar = load("res://Assets/UI/UI_New/reintentar.png")
+var image_reiniciar_ =load("res://Assets/UI/UI_New/reintentar_.png")
 
 
 func _ready():

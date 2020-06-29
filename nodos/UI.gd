@@ -72,10 +72,15 @@ func set_life(value):
 		var node = get_node("Heart" + str(i))
 		# show filled heart
 		if i <= value:
-			node.frame = 0
+			update_animation(node, "filled")
 		# show empty heart
 		else:
-			node.frame = 1 
+			update_animation(node, "empty")
+			
+func update_animation(node,animation):
+	var sprite = node.get_node("AnimatedSprite")
+	if sprite.animation != animation:
+		sprite.animation = animation
 
 func next_level_fade_out():
 	get_tree().paused = true

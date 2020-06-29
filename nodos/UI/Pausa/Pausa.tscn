@@ -10,7 +10,7 @@
 [ext_resource path="res://Assets/UI/jugar.png" type="Texture" id=8]
 [ext_resource path="res://Assets/UI/salir.png" type="Texture" id=9]
 [ext_resource path="res://Assets/UI/opciones.png" type="Texture" id=10]
-[ext_resource path="res://Assets/UI/reiniciar.png" type="Texture" id=11]
+[ext_resource path="res://Assets/UI/UI_New/reintentar.png" type="Texture" id=11]
 
 [node name="Pausa" type="Node2D"]
 pause_mode = 2
