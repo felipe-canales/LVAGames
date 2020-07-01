@@ -123,43 +123,47 @@ position = Vector2( 295.44, 257.626 )
 vida = 4
 
 [node name="HealerEnemy2" parent="Node" instance=ExtResource( 1 )]
-position = Vector2( 613.822, 218.319 )
+position = Vector2( 458.822, 316.319 )
 
 [node name="Enemy4" parent="Node" instance=ExtResource( 6 )]
 position = Vector2( 2417.68, 327.843 )
-vida = 8
+vida = 1
 
 [node name="Enemy5" parent="Node" instance=ExtResource( 6 )]
 position = Vector2( 1232.86, 76.3958 )
-vida = 5
+vida = 6
 
 [node name="Enemy3" parent="Node" instance=ExtResource( 6 )]
 position = Vector2( 1559.31, 908.253 )
+vida = 1
 
 [node name="Enemy6" parent="Node" instance=ExtResource( 6 )]
 position = Vector2( 1563.49, -269.583 )
+vida = 1
 
 [node name="Enemy7" parent="Node" instance=ExtResource( 6 )]
 position = Vector2( 2056.76, 907.75 )
-
-[node name="Enemy8" parent="Node" instance=ExtResource( 6 )]
-position = Vector2( 1229.7, 561.216 )
-vida = 5
+vida = 1
 
 [node name="Enemy9" parent="Node" instance=ExtResource( 6 )]
 position = Vector2( 2330.44, 397.926 )
+vida = 1
 
 [node name="Enemy10" parent="Node" instance=ExtResource( 6 )]
 position = Vector2( 2332.79, 273.128 )
+vida = 1
 
 [node name="Enemy11" parent="Node" instance=ExtResource( 6 )]
 position = Vector2( 2073.41, -267.439 )
+vida = 1
 
 [node name="Enemy12" parent="Node" instance=ExtResource( 6 )]
 position = Vector2( 2557.19, -275.898 )
+vida = 1
 
 [node name="Enemy13" parent="Node" instance=ExtResource( 6 )]
 position = Vector2( 2570.17, 906.355 )
+vida = 1
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 4 )
