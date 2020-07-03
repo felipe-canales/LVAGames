@@ -17,7 +17,9 @@ __meta__ = {
 }
 
 [node name="Actor" parent="." instance=ExtResource( 3 )]
+visible = false
 
 [node name="Sprite" type="Sprite" parent="Actor"]
+use_parent_material = true
 scale = Vector2( 0.229575, 0.171086 )
 texture = ExtResource( 2 )

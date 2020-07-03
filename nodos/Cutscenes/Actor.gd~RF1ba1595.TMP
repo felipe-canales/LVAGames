@@ -12,6 +12,7 @@ func _ready():
 	else:
 		alpha = 0.0
 	self.get_material().set_shader_param("alpha", alpha)
+	print(self.get_material().get_shader_param("alpha"))
 	
 func _process(delta):
 	# moving
@@ -28,6 +29,7 @@ func _process(delta):
 		self.visible = false
 	else:
 		self.get_material().set_shader_param("alpha", alpha)
+	print(self.get_material().get_shader_param("alpha"))
 
 func move_x(speed):
 	x_speed = speed

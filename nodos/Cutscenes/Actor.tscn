@@ -1,9 +1,30 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://nodos/Cutscenes/Actor.gd" type="Script" id=1]
 
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
 
+uniform float alpha = 0.5;
+
+void fragment() {
+	vec4 tex = texture(TEXTURE, UV);
+	if (tex.a > 0.9) {
+		COLOR.rgb = mix(textureLod(SCREEN_TEXTURE, SCREEN_UV, 0.0).rgb,
+						tex.rgb,
+						alpha);
+	}
+	else {
+		COLOR.rgb = textureLod(SCREEN_TEXTURE, SCREEN_UV, 0.0).rgb;
+	}
+}"
+custom_defines = ""
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+shader_param/alpha = 0.5
 
 [node name="Actor" type="KinematicBody2D"]
+material = SubResource( 2 )
 position = Vector2( 750, 450 )
 script = ExtResource( 1 )

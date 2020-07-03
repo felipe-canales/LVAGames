@@ -2,10 +2,14 @@ extends Node2D
 
 var queue = [
 	# 	time	actor			action			argument
-	[	   3, 	"Actor", 		"move_left", 	300		],
-	[	 4.5, 	"Actor", 		"stop",			null	],
-	[	 4.6, 	"Actor", 		"move_up", 		100		],
-	[	 4.9, 	"Actor", 		"move_right", 	200		],
+	[	 1.5, 	"Actor", 		"fade_in", 		2		],
+	[	   4, 	"Actor", 		"move_left", 	300		],
+	[	 5.5, 	"Actor", 		"stop",			null	],
+	[	 5.6, 	"Actor", 		"move_up", 		100		],
+	[	 5.9, 	"Actor", 		"move_right", 	200		],
+	[	 6.2, 	"Actor", 		"stop",			null	],
+	[	 6.5, 	"Actor", 		"fade_out", 	2		],
+	[	 8.6, 	"Actor", 		"fade_in", 		0.5		],
 	[	  10,	"",				"finish",		null	]
 ]
 
@@ -30,12 +34,17 @@ func exec_action(full_action):
 			get_node(full_action[1]).move_x(full_action[3])
 		"move_up":
 			get_node(full_action[1]).move_y(-full_action[3])
+		"fade_in":
+			get_node(full_action[1]).fade_in(full_action[3])
+		"fade_out":
+			get_node(full_action[1]).fade_out(full_action[3])
 		"finish":
 			finish()
 
+
 func _process(delta):
 	time += delta
-	print(time)
+	#print(time)
 	var first_action = queue[0]
 	if first_action[0] < time:
 		queue.pop_front()
