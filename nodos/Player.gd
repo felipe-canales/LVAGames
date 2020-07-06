@@ -98,7 +98,7 @@ func be_damaged():
 		invincibility_timer = 0
 		death()
 	else:
-		get_node("AudioStreamPlayer2D").play()
+		get_node("hurt").play()
 		
 func be_heal():
 	
@@ -106,6 +106,7 @@ func be_heal():
 		
 		heal_timer = HEAL_TIME
 		life +=1
+		get_node("heal").play()
 	
 		get_parent().get_node("UI").set_life(life)
 		get_node("DamageArea/CollisionShape2D").set_deferred("disabled",true)
