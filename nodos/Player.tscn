@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=55 format=2]
 
 [ext_resource path="res://Assets/Tentoria/Tentoria_Side/P_Side_2.png" type="Texture" id=1]
 [ext_resource path="res://nodos/Player.gd" type="Script" id=2]
@@ -20,6 +20,37 @@
 [ext_resource path="res://Assets/Tentoria/Tentoria_Side/P_Side_3.png" type="Texture" id=18]
 [ext_resource path="res://Assets/SFX/player_hit2.wav" type="AudioStream" id=19]
 [ext_resource path="res://Assets/SFX/heal.wav" type="AudioStream" id=20]
+[ext_resource path="res://Assets/Tentoria/Tentoria_Born/born_9.svg" type="Texture" id=21]
+[ext_resource path="res://Assets/Tentoria/Tentoria_Born/born_13.svg" type="Texture" id=22]
+[ext_resource path="res://Assets/Tentoria/Tentoria_Born/born_14.svg" type="Texture" id=23]
+[ext_resource path="res://Assets/Tentoria/Tentoria_Born/born_17.svg" type="Texture" id=24]
+[ext_resource path="res://Assets/Tentoria/Tentoria_Born/born_12.svg" type="Texture" id=25]
+[ext_resource path="res://Assets/Tentoria/Tentoria_Born/born_18.svg" type="Texture" id=26]
+[ext_resource path="res://Assets/Tentoria/Tentoria_Born/born_2.svg" type="Texture" id=27]
+[ext_resource path="res://Assets/Tentoria/Tentoria_Born/born_3.svg" type="Texture" id=28]
+[ext_resource path="res://Assets/Tentoria/Tentoria_Born/born_10.svg" type="Texture" id=29]
+[ext_resource path="res://Assets/Tentoria/Tentoria_Born/born_4.svg" type="Texture" id=30]
+[ext_resource path="res://Assets/Tentoria/Tentoria_Born/born_15.svg" type="Texture" id=31]
+[ext_resource path="res://Assets/Tentoria/Tentoria_Born/born_16.svg" type="Texture" id=32]
+[ext_resource path="res://Assets/Tentoria/Tentoria_Born/born_5.svg" type="Texture" id=33]
+[ext_resource path="res://Assets/Tentoria/Tentoria_Born/born_7.svg" type="Texture" id=34]
+[ext_resource path="res://Assets/Tentoria/Tentoria_Born/born_8.svg" type="Texture" id=35]
+[ext_resource path="res://Assets/Tentoria/Tentoria_Born/born_6.svg" type="Texture" id=36]
+[ext_resource path="res://Assets/Tentoria/Tentoria_Born/born_11.svg" type="Texture" id=37]
+[ext_resource path="res://Assets/Tentoria/Tentoria_Born/born_1.svg" type="Texture" id=38]
+[ext_resource path="res://Assets/Tentoria/Tentoria_Death/death_1.svg" type="Texture" id=39]
+[ext_resource path="res://Assets/Tentoria/Tentoria_Death/death_3.svg" type="Texture" id=40]
+[ext_resource path="res://Assets/Tentoria/Tentoria_Death/death_4.svg" type="Texture" id=41]
+[ext_resource path="res://Assets/Tentoria/Tentoria_Death/death_5.svg" type="Texture" id=42]
+[ext_resource path="res://Assets/Tentoria/Tentoria_Death/death_6.svg" type="Texture" id=43]
+[ext_resource path="res://Assets/Tentoria/Tentoria_Death/death_8.svg" type="Texture" id=44]
+[ext_resource path="res://Assets/Tentoria/Tentoria_Death/death_9.svg" type="Texture" id=45]
+[ext_resource path="res://Assets/Tentoria/Tentoria_Death/death_7.svg" type="Texture" id=46]
+[ext_resource path="res://Assets/Tentoria/Tentoria_Death/death_10.svg" type="Texture" id=47]
+[ext_resource path="res://Assets/Tentoria/Tentoria_Death/death_11.svg" type="Texture" id=48]
+[ext_resource path="res://Assets/Tentoria/Tentoria_Death/death_2.svg" type="Texture" id=49]
+[ext_resource path="res://Assets/Tentoria/Tentoria_Death/death_12.svg" type="Texture" id=50]
+[ext_resource path="res://Assets/Tentoria/Tentoria_Death/death_13.svg" type="Texture" id=51]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 2, -24, 19, -2, 12, 30, 2, 42, -9, 30, -16, -2 )
@@ -33,6 +64,16 @@ animations = [ {
 "loop": true,
 "name": "side",
 "speed": 7.0
+}, {
+"frames": [ ExtResource( 39 ), ExtResource( 49 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 46 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 50 ), ExtResource( 51 ) ],
+"loop": true,
+"name": "death",
+"speed": 12.0
+}, {
+"frames": [ ExtResource( 38 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 30 ), ExtResource( 33 ), ExtResource( 36 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 21 ), ExtResource( 29 ), ExtResource( 37 ), ExtResource( 25 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 24 ), ExtResource( 26 ) ],
+"loop": true,
+"name": "born",
+"speed": 15.0
 }, {
 "frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
 "loop": true,
