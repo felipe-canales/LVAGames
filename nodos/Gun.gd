@@ -32,6 +32,7 @@ func check_destroy(target):
 	
 	if target != null:
 		if target.destroyed:
+			get_node("EnemyDeath").play()
 			target.queue_free()
 			enemies.erase(target)
 			enemies_not_visible.erase(target)
@@ -78,6 +79,7 @@ func _physics_process(delta):
 	if target_enemy != null:
 		rot = ((target_enemy.global_position - global_position).angle())
 		if bullet_cooldown_counter >= bullet_cooldown:
+				get_node("Shooting").play()
 				var bullet_inst = bullet.instance()
 				bullet_inst.global_position = global_position
 				bullet_inst.rotation = rot

@@ -97,6 +97,8 @@ func be_damaged():
 	if life == 0:
 		invincibility_timer = 0
 		death()
+	else:
+		get_node("AudioStreamPlayer2D").play()
 		
 func be_heal():
 	
