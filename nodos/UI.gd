@@ -69,7 +69,7 @@ func set_life(value):
 	objective_saturation = 1 - (value/5.0)
 	# for heart
 	for i in range(1, 6):
-		var node = get_node("Heart" + str(i))
+		var node = get_node("Fondo_Hearts").get_node("Heart" + str(i))
 		# show filled heart
 		if i <= value:
 			update_animation(node, "filled")
