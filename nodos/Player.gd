@@ -8,8 +8,9 @@ var vel = Vector2(0,0)
 var invincibility_timer = 0
 var heal_timer = 0
 var flip = false
-const TARGET_AXIS = 100
-const TARGET_DIAG = TARGET_AXIS / 1.41
+var dead = false
+var TARGET_AXIS = 100
+var TARGET_DIAG = TARGET_AXIS / 1.41
 const ACCEL = 1.5
 
 
@@ -30,10 +31,7 @@ func _process(delta):
 		
 		get_parent().get_node("UI").show_game_over()
 		
-	if get_node("AnimatedSprite").get_animation() == "born":
-		
-		pass
-	else:
+	if get_node("AnimatedSprite").get_animation() in ["stand", "side"]:
 		var min_vel = 80
 		var diag_margin = 1.1
 		# walking right
@@ -117,16 +115,16 @@ func be_heal():
 		get_node("DamageArea/CollisionShape2D").set_deferred("disabled",true)
 		
 func death():
-	#hide()
-	#get_node("CollisionShape2D").set_deferred("disabled", true)
-	#get_tree().paused = true
-	
-	#get_tree().reload_current_scene()
-	#get_tree().get_nodes_in_group("Chapters")[0].up_level()
+	dead = true
+	get_node("death").play()
 	update_animation("death")
-	get_parent().get_node("UI").next_level_fade_out()
+	TARGET_AXIS = 0
+	TARGET_DIAG = 0
+	remove_child(get_node("Gun"))
 
 func _on_DamageArea_body_entered(body):
+	if dead:
+		return
 	if "Enemy" in body.get_groups() and invincibility_timer <= 0:
 		be_damaged()
 		
@@ -143,4 +141,7 @@ func update_animation(animation):
 func _on_AnimatedSprite_animation_finished():
 	if get_node("AnimatedSprite").get_animation() == "born":
 		update_animation("stand")
+	elif get_node("AnimatedSprite").get_animation() == "death":
+		$AnimatedSprite.set_frame(11)
+		get_parent().get_node("UI").next_level_fade_out()
 		
