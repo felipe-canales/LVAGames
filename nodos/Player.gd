@@ -13,11 +13,10 @@ const TARGET_DIAG = TARGET_AXIS / 1.41
 const ACCEL = 1.5
 
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
+	update_animation("born")
+	 # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -29,21 +28,26 @@ func _process(delta):
 	if(len(get_tree().get_nodes_in_group("Enemy")) == 0):
 		
 		get_parent().get_node("UI").show_game_over()
-	
-	var min_vel = 80
-	var diag_margin = 1.1
-	# walking right
-	if vel.x > min_vel and (diag_margin * vel.x) > abs(vel.y):
-		flip = false
-		update_animation("side")
-	# walking left
-	elif vel.x < -min_vel and -(diag_margin * vel.x) > abs(vel.y):
-		flip = true
-		update_animation("side")
-	# walking forwards, backwards or standing
+		
+	if get_node("AnimatedSprite").get_animation() == "born":
+		
+		pass
 	else:
-		flip = false
-		update_animation("stand")
+		var min_vel = 80
+		var diag_margin = 1.1
+		# walking right
+		if vel.x > min_vel and (diag_margin * vel.x) > abs(vel.y):
+			flip = false
+			update_animation("side")
+		# walking left
+		elif vel.x < -min_vel and -(diag_margin * vel.x) > abs(vel.y):
+			flip = true
+			update_animation("side")
+		# walking forwards, backwards or standing
+		else:
+			
+			flip = false
+			update_animation("stand")
 
 func _physics_process(delta):
 	
@@ -118,6 +122,7 @@ func death():
 	
 	#get_tree().reload_current_scene()
 	#get_tree().get_nodes_in_group("Chapters")[0].up_level()
+	update_animation("death")
 	get_parent().get_node("UI").next_level_fade_out()
 
 func _on_DamageArea_body_entered(body):
@@ -132,3 +137,9 @@ func update_animation(animation):
 	if sprite.animation != animation:
 		sprite.animation = animation
 	sprite.set_flip_h(flip)
+
+
+func _on_AnimatedSprite_animation_finished():
+	if get_node("AnimatedSprite").get_animation() == "born":
+		update_animation("stand")
+		
