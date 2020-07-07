@@ -72,6 +72,10 @@ func _process(delta):
 		var collision = ray_collider(enemy, focus_enemy)
 		if (collision == enemy):
 			enemies_not_visible.erase(enemy)
+			
+	for enemy in get_tree().get_nodes_in_group("Enemy"):
+		
+		check_destroy(enemy)
 
 func _physics_process(delta):
 	

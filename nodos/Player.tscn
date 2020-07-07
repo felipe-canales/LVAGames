@@ -99,7 +99,7 @@ shape = SubResource( 2 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 3 )
 animation = "stand"
-frame = 5
+frame = 2
 playing = true
 
 [node name="hurt" type="AudioStreamPlayer2D" parent="."]
