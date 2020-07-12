@@ -1,0 +1,119 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Assets/Mapa/Casa_1.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Mapa/Ciudad/Pared_1.svg" type="Texture" id=3]
+[ext_resource path="res://Assets/Mapa/fuente.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Mapa/Ciudad/Piso_1.svg" type="Texture" id=5]
+[ext_resource path="res://nodos/Gun.tscn" type="PackedScene" id=7]
+[ext_resource path="res://nodos/Player.tscn" type="PackedScene" id=8]
+[ext_resource path="res://nodos/UI.tscn" type="PackedScene" id=9]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+points = PoolVector2Array( 0, 0, 201, 0, 201, 199, 0, 199 )
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+points = PoolVector2Array( 10.368, 155.52, 87.0912, 120.269, 147.226, 120.269, 120.269, 68.4288, 157.594, 24.8832, 199.066, 70.5024, 165.888, 120.269, 226.022, 120.269, 306.893, 155.52, 317.261, 199.066, 238.464, 304.819, 85.0176, 304.819, 6.22083, 199.066 )
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+points = PoolVector2Array( 6.22083, 111.122, 60.1345, 1.22083, 261.274, 3.29443, 313.114, 102.827, 306.893, 289.451, 302.746, 295.672, 306.893, 291.525, 308.966, 306.04, 8.29443, 306.04, 8.29443, 287.378, 12.4416, 295.672, 6.22083, 289.451 )
+
+[sub_resource type="TileSet" id=4]
+1/name = "Piso_1.svg 1"
+1/texture = ExtResource( 5 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 1, 204, 201 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = -1
+2/name = "Pared_1.svg 2"
+2/texture = ExtResource( 3 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 0, 0, 201, 199 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape = SubResource( 1 )
+2/shape_one_way = false
+2/shape_one_way_margin = 1.0
+2/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 1 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+2/z_index = 0
+3/name = "fuente.png 3"
+3/texture = ExtResource( 4 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( -10, -10, 323, 321 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape = SubResource( 2 )
+3/shape_one_way = false
+3/shape_one_way_margin = 1.0
+3/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 2 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+3/z_index = 0
+4/name = "Casa_1.png 4"
+4/texture = ExtResource( 2 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( -10, -5, 317, 315 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape = SubResource( 3 )
+4/shape_one_way = false
+4/shape_one_way_margin = 1.0
+4/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 3 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+4/z_index = 0
+
+[node name="Node2D" type="Node2D"]
+
+[node name="UI" parent="." instance=ExtResource( 9 )]
+
+[node name="Player" parent="." instance=ExtResource( 8 )]
+position = Vector2( 139.718, 883.395 )
+
+[node name="Gun" parent="Player" instance=ExtResource( 7 )]
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2( 0, 7.46912 )
+scale = Vector2( 0.906618, 1.01626 )
+current = true
+
+[node name="Node" type="Node" parent="."]
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2( -446.142, 569.481 )
+tile_set = SubResource( 4 )
+cell_size = Vector2( 50, 50 )
+format = 1
