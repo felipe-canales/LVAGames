@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://nodos/UI.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Tentoria/Plasma/P10.svg" type="Texture" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Assets/Tentoria/Plasma/P9.svg" type="Texture" id=13]
 [ext_resource path="res://Assets/Tentoria/Plasma/P6.svg" type="Texture" id=14]
 [ext_resource path="res://Assets/Tentoria/Plasma/Fondo_plasma.svg" type="Texture" id=15]
+[ext_resource path="res://Assets/Musica/music1.ogg" type="AudioStream" id=16]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -153,3 +154,8 @@ __meta__ = {
 position = Vector2( -12, 40 )
 scale = Vector2( 0.15, 0.15 )
 texture = ExtResource( 3 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 16 )
+volume_db = -19.951
+autoplay = true
