@@ -44,7 +44,6 @@ void fragment() {
 	c = hsv2rgb(vec3(c.x, c.y * saturation, c.z * (0.7 + saturation * 0.3) * brightness));
 	COLOR.rgb = c;
 }"
-custom_defines = ""
 
 [sub_resource type="ShaderMaterial" id=2]
 shader = SubResource( 1 )

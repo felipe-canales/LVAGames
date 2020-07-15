@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://nodos/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://nodos/Enemies/Enemy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://nodos/Enemies/ShooterEnemy.tscn" type="PackedScene" id=2]
 [ext_resource path="res://nodos/Gun.tscn" type="PackedScene" id=3]
 [ext_resource path="res://nodos/UI.tscn" type="PackedScene" id=4]
 
@@ -16,14 +16,5 @@ position = Vector2( 321, 162 )
 
 [node name="Node" type="Node" parent="."]
 
-[node name="Enemy" parent="Node" instance=ExtResource( 2 )]
-position = Vector2( 173, 211 )
-
-[node name="Enemy4" parent="Node" instance=ExtResource( 2 )]
-position = Vector2( 153.843, 380.895 )
-
-[node name="Enemy3" parent="Node" instance=ExtResource( 2 )]
-position = Vector2( 448.58, 75.6319 )
-
-[node name="Enemy2" parent="Node" instance=ExtResource( 2 )]
-position = Vector2( 472.791, 300.895 )
+[node name="ShooterEnemy" parent="Node" instance=ExtResource( 2 )]
+position = Vector2( 555.267, 271.066 )

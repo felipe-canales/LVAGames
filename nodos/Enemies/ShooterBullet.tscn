@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/ShooterEnemy/kisspng-traffic-cone-safety-traffic-cone-5a77b5ac878a15.8191482815177947325552.png" type="Texture" id=1]
+[ext_resource path="res://nodos/Enemies/ShooterBullet.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 425.364, 221.709 )
+
+[node name="Node2D" type="Area2D" groups=[
+"Bullets",
+]]
+position = Vector2( 4.54419, 6.81622 )
+scale = Vector2( 0.0771466, -0.127749 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 2.27213, -3.40817 )
+rotation = 1.56215
+scale = Vector2( 0.625753, 0.678825 )
+texture = ExtResource( 1 )
+[connection signal="body_entered" from="." to="." method="_on_Node2D_body_entered"]

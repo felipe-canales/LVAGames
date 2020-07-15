@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/ShooterEnemy/kisspng-traffic-cone-safety-traffic-cone-5a77b5ac878a15.8191482815177947325552.png" type="Texture" id=1]
+[ext_resource path="res://nodos/Enemies/ShooterEnemy.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 64.2546, 95.8989 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 81.2778, 108.279 )
+
+[node name="ShooterEnemy" type="KinematicBody2D" groups=[
+"Enemy",
+]]
+scale = Vector2( 0.575518, 0.56814 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0.213501, -0.52713 )
+scale = Vector2( 0.155544, 0.151758 )
+texture = ExtResource( 1 )
