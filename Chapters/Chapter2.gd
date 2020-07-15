@@ -3,8 +3,10 @@ extends Node2D
 var nivel1 = "res://Chapters/Chapter2/level_01-2.tscn"
 var nivel2 = "res://Chapters/Chapter2/level_02-2.tscn"
 var nivel3 = "res://Chapters/Chapter2/level_03-2.tscn"
+var nivel4 = "res://Chapters/Chapter2/level_04-2.tscn"
+var nivel5 = "res://Chapters/Chapter2/level_05-2.tscn"
 
-var arreglo_niveles = [nivel1, nivel2, nivel3]
+var arreglo_niveles = [nivel1, nivel2, nivel3, nivel4, nivel5]
 
 var actual_nivel
 var num_nivel
