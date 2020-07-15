@@ -11,7 +11,7 @@
 [ext_resource path="res://nodos/UI.tscn" type="PackedScene" id=9]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
-points = PoolVector2Array( 0, 0, 201, 0, 201, 199, 0, 199 )
+points = PoolVector2Array( 0, 0, 200, 0, 200, 200, 0, 200 )
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 10.368, 155.52, 87.0912, 120.269, 147.226, 120.269, 120.269, 68.4288, 157.594, 24.8832, 199.066, 70.5024, 165.888, 120.269, 226.022, 120.269, 306.893, 155.52, 317.261, 199.066, 238.464, 304.819, 85.0176, 304.819, 6.22083, 199.066 )
@@ -38,7 +38,7 @@ points = PoolVector2Array( 6.22083, 111.122, 60.1345, 1.22083, 261.274, 3.29443,
 2/texture = ExtResource( 3 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )
-2/region = Rect2( 0, 0, 201, 199 )
+2/region = Rect2( 0, 0, 200, 200 )
 2/tile_mode = 0
 2/occluder_offset = Vector2( 0, 0 )
 2/navigation_offset = Vector2( 0, 0 )
