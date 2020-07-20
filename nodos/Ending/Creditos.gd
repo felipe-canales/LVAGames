@@ -13,6 +13,8 @@ onready var line := $CreditsContainer/Line
 var started := false
 var finished := false
 
+const mainmenu = "res://nodos/UI/MainMenu/MainMenu.tscn"
+
 var section
 var section_next := true
 var section_timer := 0.0
@@ -53,6 +55,12 @@ var credits = [
 
 func _process(delta):
 	var scroll_speed = base_speed * delta
+	
+	
+	if finished or Input.is_action_just_pressed("pausa"):
+		
+		get_tree().change_scene(mainmenu)
+		
 	
 	if section_next:
 		section_timer += delta * speed_up_multiplier if speed_up else delta

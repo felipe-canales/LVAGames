@@ -31,8 +31,7 @@ func _process(delta):
 
 func _physics_process(delta):
 	
-	
-	
+
 	if options:
 		get_children()[0].p = true
 		get_children()[0].hide()

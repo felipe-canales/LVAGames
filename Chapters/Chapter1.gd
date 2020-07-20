@@ -26,12 +26,10 @@ func init_level():
 	actual_nivel = arreglo_niveles[num_nivel]
 	get_tree().change_scene(actual_nivel)
 
-	
 func up_nivel():
 	# sig nivel
 	num_nivel += 1
 	
-	# si hay cutscene
 	if arreglo_cutscenes[num_nivel] != null:
 		var cutscene = arreglo_cutscenes[num_nivel]
 		arreglo_cutscenes[num_nivel] = null
@@ -41,13 +39,10 @@ func up_nivel():
 	# si hay sig nivel
 	elif num_nivel < len(arreglo_niveles):
 		init_level()
+
 		
 	# fin del cap
 	else:
 		print("uwu")
 		get_parent().up_chapter()
 	
-func _process(delta):
-	
-	pass
-

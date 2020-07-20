@@ -11,6 +11,7 @@ var boton
 
 const chapter = preload("res://Chapters/Chapters.tscn")
 const select_chapter = "res://nodos/UI/ChapterSelect/ChapterSelect.tscn"
+const creditos = "res://nodos/Ending/Creditos.tscn"
 
 func _ready():
 	pass 
@@ -65,7 +66,7 @@ func _physics_process(delta):
 				get_tree().change_scene(select_chapter)
 				
 			opciones:
-				pass
+				get_tree().change_scene(creditos)
 				
 			salir:
 				get_tree().quit()
