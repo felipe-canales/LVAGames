@@ -67,20 +67,20 @@ animations = [ {
 "name": "side",
 "speed": 7.0
 }, {
-"frames": [ ExtResource( 38 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 30 ), ExtResource( 33 ), ExtResource( 36 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 21 ), ExtResource( 29 ), ExtResource( 37 ), ExtResource( 25 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 24 ), ExtResource( 26 ) ],
+"frames": [ ExtResource( 39 ), ExtResource( 49 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 46 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 50 ), ExtResource( 51 ) ],
 "loop": true,
-"name": "born",
-"speed": 15.0
+"name": "death",
+"speed": 12.0
 }, {
 "frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "stand",
 "speed": 7.0
 }, {
-"frames": [ ExtResource( 39 ), ExtResource( 49 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 46 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 50 ), ExtResource( 51 ) ],
+"frames": [ ExtResource( 38 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 30 ), ExtResource( 33 ), ExtResource( 36 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 21 ), ExtResource( 29 ), ExtResource( 37 ), ExtResource( 25 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 24 ), ExtResource( 26 ) ],
 "loop": true,
-"name": "death",
-"speed": 12.0
+"name": "born",
+"speed": 15.0
 } ]
 
 [node name="Player" type="KinematicBody2D" groups=[
@@ -104,17 +104,25 @@ animation = "stand"
 frame = 6
 playing = true
 
-[node name="hurt" type="AudioStreamPlayer2D" parent="."]
+[node name="hurt" type="AudioStreamPlayer2D" parent="." groups=[
+"Efectos",
+]]
 stream = ExtResource( 19 )
 
-[node name="heal" type="AudioStreamPlayer2D" parent="."]
+[node name="heal" type="AudioStreamPlayer2D" parent="." groups=[
+"Efectos",
+]]
 stream = ExtResource( 20 )
 
-[node name="spawn" type="AudioStreamPlayer2D" parent="."]
+[node name="spawn" type="AudioStreamPlayer2D" parent="." groups=[
+"Efectos",
+]]
 stream = ExtResource( 52 )
 attenuation = 1e-05
 
-[node name="death" type="AudioStreamPlayer2D" parent="."]
+[node name="death" type="AudioStreamPlayer2D" parent="." groups=[
+"Efectos",
+]]
 stream = ExtResource( 53 )
 volume_db = -8.27
 [connection signal="body_entered" from="DamageArea" to="." method="_on_DamageArea_body_entered"]

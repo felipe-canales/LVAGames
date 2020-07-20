@@ -4,6 +4,7 @@ var continuar = "continuar"
 var reiniciar = "reiniciar"
 var opciones = "opciones"
 var salir = "salir"
+var p = false
 
 var botones = [continuar, reiniciar,opciones, salir]
 var actual_boton = 0
@@ -15,6 +16,7 @@ var escena_inicio = "res://nodos/UI/MainMenu/MainMenu.tscn"
 func _ready():
 	actual_boton = 0
 	
+	
 func _reset():
 	actual_boton = 0
 	
@@ -23,8 +25,16 @@ func set_bull(bullets):
 	bull = bullets
 	
 
-
 func _physics_process(delta):
+	
+	if p:
+		pass
+	else:
+		pause_interacion()
+
+func pause_interacion():
+	
+	
 	
 	
 	if Input.is_action_just_pressed("player_up"):
@@ -86,7 +96,7 @@ func _physics_process(delta):
 				get_tree().reload_current_scene()
 				
 			opciones:
-				pass
+				get_parent().options = true
 				
 			salir:
 				

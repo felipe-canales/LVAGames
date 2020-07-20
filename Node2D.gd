@@ -1,5 +1,6 @@
 extends Node2D
 var pausa = false
+var options = false
 
 func _ready():
  
@@ -24,7 +25,24 @@ func _unpaused():
 		
 func _process(delta):
 
-	if Input.is_action_just_pressed("pausa"):
+	if Input.is_action_just_pressed("pausa") and !options and !get_children()[0].p:
 
 		_unpaused()
 
+func _physics_process(delta):
+	
+	
+	
+	if options:
+		get_children()[0].p = true
+		get_children()[0].hide()
+		get_children()[1].p = false
+		get_children()[1].show()
+		
+	else:
+		get_children()[0].p = false
+		get_children()[0].show()
+		get_children()[1].p = true
+		get_children()[1].hide()
+		
+	

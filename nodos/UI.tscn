@@ -44,6 +44,7 @@ void fragment() {
 	c = hsv2rgb(vec3(c.x, c.y * saturation, c.z * (0.7 + saturation * 0.3) * brightness));
 	COLOR.rgb = c;
 }"
+custom_defines = ""
 
 [sub_resource type="ShaderMaterial" id=2]
 shader = SubResource( 1 )
@@ -154,7 +155,9 @@ position = Vector2( -12, 40 )
 scale = Vector2( 0.15, 0.15 )
 texture = ExtResource( 3 )
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." groups=[
+"MusicaFondo",
+]]
 stream = ExtResource( 16 )
 volume_db = -19.951
 autoplay = true
