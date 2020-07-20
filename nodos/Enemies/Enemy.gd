@@ -10,6 +10,8 @@ var velocidad = 2500
 # Distancia entre el enemigo y el player
 var distancia = 200
 
+onready var img_vida = get_node("Vida")
+
 export var vida = 3
 
 onready var animated_sprite:AnimatedSprite = $AnimatedSprite
@@ -21,6 +23,7 @@ var movcont_x = 0
 var movcont_y = 0
 
 func _ready():
+	img_vida.set_values(vida)
 	pass 
 
 func _process(delta):
@@ -53,6 +56,7 @@ func _process(delta):
 func _on_Dao_area_entered(area:Area2D):
 	if "Bullets" in area.get_groups():
 		vida -= 1
+		img_vida.danio()
 
 func _on_Dao_body_entered(body):
 	pass

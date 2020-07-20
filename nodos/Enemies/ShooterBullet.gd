@@ -4,14 +4,15 @@ var destroyed = false
 var speed = 1800
 var velocity = Vector2.ZERO
 
+export var life = 10
+
+
 func _ready():
-	
 	velocity = speed * transform.x
 	
 func _physics_process(delta):
 	
 	position += velocity * delta
-
 
 
 

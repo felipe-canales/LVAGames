@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Assets/AwayEnemy/Front/Front_1.svg" type="Texture" id=1]
 [ext_resource path="res://nodos/Enemies/AwayEnemy.gd" type="Script" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Assets/AwayEnemy/Front/Front_3.svg" type="Texture" id=8]
 [ext_resource path="res://Assets/AwayEnemy/Front/Front_7.svg" type="Texture" id=9]
 [ext_resource path="res://Assets/AwayEnemy/Front/Front_9.svg" type="Texture" id=10]
+[ext_resource path="res://nodos/Enemies/life.tscn" type="PackedScene" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 19.8788, 32.602 )
@@ -31,6 +32,10 @@ animations = [ {
 position = Vector2( 68.8905, 7.4514 )
 script = ExtResource( 2 )
 
+[node name="Vida" parent="." instance=ExtResource( 11 )]
+position = Vector2( -40, -80 )
+scale = Vector2( 0.173, 0.178 )
+
 [node name="Node2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.698364, -2.09502 )
 shape = SubResource( 1 )
@@ -46,6 +51,6 @@ shape = SubResource( 2 )
 scale = Vector2( 0.122, 0.11 )
 frames = SubResource( 3 )
 animation = "stand"
-frame = 2
+frame = 7
 playing = true
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]

@@ -27,11 +27,13 @@ var rot
 
 # Por definir segun la agrupacion de nodos
 onready var player = get_parent().get_parent().get_node("Player")
+onready var img_vida = get_node("Vida")
 
 var movcont_x = 0
 var movcont_y = 0
 
 func _ready():
+	img_vida.set_values(life)
 	pass 
 	
 func _process(delta):
@@ -86,3 +88,4 @@ func _physics_process(delta):
 func _on_Area2D_area_entered(area):
 	if "Bullets" in area.get_groups():
 		life -= 1
+		img_vida.danio()

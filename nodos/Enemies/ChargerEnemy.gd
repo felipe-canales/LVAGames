@@ -27,6 +27,7 @@ var attack = false
 
 # Por definir segun la agrupacion de nodos
 onready var player = get_parent().get_parent().get_node("Player")
+onready var img_vida = get_node("Vida")
 
 
 onready var animated_sprite:AnimatedSprite = $AnimatedSprite
@@ -40,6 +41,7 @@ var dir_charger_x
 var dir_charger_y
 
 func _ready():
+	img_vida.set_values(life)
 	
 	var gun = get_tree().get_nodes_in_group("Gun")
 	animated_sprite.set_animation("stand")
@@ -114,6 +116,7 @@ func _physics_process(delta):
 func be_damaged():
 	invincibility_timer = INVINCIBILTY_TIME
 	life -=1
+	img_vida.danio()
 	get_node("DamageArea/CollisionShape2D2").set_deferred("disabled",true)
 	if life == 0:
 		invincibility_timer = 0
@@ -139,6 +142,7 @@ func death():
 func _on_Dao_area_entered(area:Area2D):
 	if "Bullets" in area.get_groups():
 		life -= 1
+		img_vida.danio()
 
 func _on_DamageArea_body_entered(body:KinematicBody2D):
 
