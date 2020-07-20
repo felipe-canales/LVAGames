@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
+[ext_resource path="res://Chapters/Chapter3.gd" type="Script" id=1]
 [ext_resource path="res://Chapters/Chapter2.gd" type="Script" id=2]
 [ext_resource path="res://Chapters/Chapter1.gd" type="Script" id=3]
 
@@ -64,3 +65,6 @@ script = ExtResource( 3 )
 
 [node name="Chapter2" type="Node2D" parent="."]
 script = ExtResource( 2 )
+
+[node name="Chapter3" type="Node2D" parent="."]
+script = ExtResource( 1 )
