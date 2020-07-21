@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://nodos/UI/ChapterSelect/ChapterSelect.gd" type="Script" id=1]
 [ext_resource path="res://Assets/UI/cap2.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://nodos/UI/ChapterSelect/Capitulo2.gd" type="Script" id=7]
 [ext_resource path="res://nodos/UI/ChapterSelect/Atras.gd" type="Script" id=8]
 [ext_resource path="res://nodos/UI/ChapterSelect/Capitulo1.gd" type="Script" id=9]
+[ext_resource path="res://nodos/UI/ChapterSelect/Capitulo3.gd" type="Script" id=10]
 
 [sub_resource type="ShaderMaterial" id=1]
 
@@ -32,9 +33,9 @@ flip_h = true
 
 [node name="Capitulo1" type="TextureRect" parent="."]
 margin_left = 100.0
-margin_top = 250.0
+margin_top = 200.0
 margin_right = 1225.0
-margin_bottom = 858.0
+margin_bottom = 808.0
 rect_scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 4 )
 stretch_mode = 3
@@ -42,19 +43,29 @@ script = ExtResource( 9 )
 
 [node name="Capitulo2" type="TextureRect" parent="."]
 margin_left = 100.0
+margin_top = 275.0
+margin_right = 1225.0
+margin_bottom = 883.0
+rect_scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 2 )
+stretch_mode = 3
+script = ExtResource( 7 )
+
+[node name="Capitulo3" type="TextureRect" parent="."]
+margin_left = 100.0
 margin_top = 350.0
 margin_right = 1225.0
 margin_bottom = 958.0
 rect_scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 2 )
 stretch_mode = 3
-script = ExtResource( 7 )
+script = ExtResource( 10 )
 
 [node name="Atras" type="TextureRect" parent="."]
 margin_left = 100.0
-margin_top = 450.0
+margin_top = 425.0
 margin_right = 1225.0
-margin_bottom = 1058.0
+margin_bottom = 1033.0
 rect_scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 5 )
 stretch_mode = 3
