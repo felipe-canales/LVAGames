@@ -12,12 +12,15 @@ var arreglo_niveles = [nivel1, nivel2, nivel5, nivel3, nivel4]
 var arreglo_cutscenes = [null,null,cutscene1,null,null,null]
 
 var actual_nivel
-var num_nivel 
+var num_nivel = 0
 
+func set_level(num):
+	
+	num_nivel = num
 
 func _ready():
 	
-	num_nivel = 0
+	
 	actual_nivel = arreglo_niveles[num_nivel]
 
 func init_level():

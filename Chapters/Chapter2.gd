@@ -10,13 +10,17 @@ var test = "res://Chapters/Chapter2/level_test_2.tscn"
 var arreglo_niveles = [nivel1, nivel2, nivel3, nivel4, nivel5]
 
 var actual_nivel
-var num_nivel
+var num_nivel = 0
+
+func set_level(num):
+	
+	num_nivel = num
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
 	
-	num_nivel = 0
+	
 	actual_nivel = arreglo_niveles[num_nivel]
 
 

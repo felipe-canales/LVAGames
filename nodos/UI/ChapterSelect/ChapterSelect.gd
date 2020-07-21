@@ -12,6 +12,9 @@ var boton
 
 const menu = "res://nodos/UI/MainMenu/MainMenu.tscn"
 var chapter = preload("res://Chapters/Chapters.tscn")
+var nivel1= "res://nodos/UI/ChapterSelect/Capitulo1Selector/SelectorNiveles1.tscn"
+var nivel2= "res://nodos/UI/ChapterSelect/Capitulo2Selector/SelectorNiveles2.tscn"
+var nivel3= "res://nodos/UI/ChapterSelect/Capitulo3Selector/SelectorNiveles3.tscn"
 
 func image_button(num):
 	
@@ -58,21 +61,16 @@ func _physics_process(delta):
 			
 			chapter1:
 				
-				var niv1 = chapter.instance()
-				niv1.init(0)
-				get_tree().get_root().add_child(niv1)
+				
+				get_tree().change_scene(nivel1)
 				
 			chapter2:
 				
-				var niv2 = chapter.instance()
-				niv2.init(1)
-				get_tree().get_root().add_child(niv2)
+				get_tree().change_scene(nivel2)
 				
 			chapter3:
 				
-				var niv3 = chapter.instance()
-				niv3.init(2)
-				get_tree().get_root().add_child(niv3)
+				get_tree().change_scene(nivel3)
 				
 			atras:
 				

@@ -58,7 +58,7 @@ func _physics_process(delta):
 			jugar:
 				
 				var niv1 = chapter.instance()
-				niv1.init(0)
+				niv1.init(0,0)
 				get_tree().get_root().add_child(niv1)
 				
 			seleccionar:

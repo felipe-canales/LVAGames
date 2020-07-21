@@ -20,10 +20,11 @@ func _ready():
 	chapters = get_children()
 	actual_chapter.init_level()
 
-func init(num_chap):
+func init(num_chap, nivel):
 	
 	num_chapter = num_chap
 	actual_chapter = get_children()[num_chapter]
+	actual_chapter.set_level(nivel)
 
 	
 func get_chapter():
