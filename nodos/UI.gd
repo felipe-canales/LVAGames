@@ -29,7 +29,7 @@ func _pausa():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 
-	if Input.is_action_just_pressed("pausa") and !pausa:
+	if Input.is_action_just_pressed("pausa") and !pausa and !get_tree().paused:
 
 		_pausa()
 		var inPause = pause.instance()
