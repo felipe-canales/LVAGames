@@ -14,15 +14,17 @@
 anchor_left = 0.00109613
 anchor_right = 1.0011
 anchor_bottom = 1.0
-margin_left = 4.21701
-margin_right = 346.215
+margin_left = 1.30453
+margin_top = -0.749146
+margin_right = 343.302
+margin_bottom = -0.749146
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 502.635, 301.911 )
+position = Vector2( 502.635, 300.324 )
 scale = Vector2( 0.776, 0.821 )
 texture = ExtResource( 1 )
 
@@ -31,7 +33,7 @@ margin_left = 400.0
 margin_top = 50.0
 margin_right = 642.0
 margin_bottom = 67.0
-rect_scale = Vector2( 2, 2 )
+rect_scale = Vector2( 1.5, 1.5 )
 custom_fonts/font = ExtResource( 2 )
 text = "SELECCIONE NIVEL"
 
@@ -40,7 +42,6 @@ margin_left = 600.0
 margin_top = 500.0
 margin_right = 704.0
 margin_bottom = 537.0
-rect_scale = Vector2( 2, 2 )
 custom_fonts/font = ExtResource( 2 )
 text = "Atras
 "
@@ -51,16 +52,16 @@ margin_left = 600.0
 margin_top = 200.0
 margin_right = 658.0
 margin_bottom = 217.0
-rect_scale = Vector2( 1.5, 1.5 )
 custom_fonts/font = ExtResource( 2 )
 text = "Nivel"
 script = ExtResource( 3 )
 
 [node name="Label" type="Label" parent="Nivel2"]
-margin_left = 60.0
-margin_right = 100.0
-margin_bottom = 31.0
-rect_scale = Vector2( 1.5, 1.5 )
+margin_left = 100.0
+margin_top = 1.0
+margin_right = 140.0
+margin_bottom = 32.0
+rect_scale = Vector2( 2, 2 )
 text = "2"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -71,16 +72,16 @@ margin_left = 400.0
 margin_top = 200.0
 margin_right = 458.0
 margin_bottom = 217.0
-rect_scale = Vector2( 1.5, 1.5 )
 custom_fonts/font = ExtResource( 2 )
 text = "Nivel"
 script = ExtResource( 7 )
 
 [node name="Label" type="Label" parent="Nivel1"]
-margin_left = 60.0
-margin_right = 100.0
-margin_bottom = 31.0
-rect_scale = Vector2( 1.5, 1.5 )
+margin_left = 100.0
+margin_top = 1.0
+margin_right = 140.0
+margin_bottom = 32.0
+rect_scale = Vector2( 2, 2 )
 text = "1"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -91,16 +92,15 @@ margin_left = 800.0
 margin_top = 200.0
 margin_right = 858.0
 margin_bottom = 217.0
-rect_scale = Vector2( 1.5, 1.5 )
 custom_fonts/font = ExtResource( 2 )
 text = "Nivel"
 script = ExtResource( 6 )
 
 [node name="Label" type="Label" parent="Nivel3"]
-margin_left = 60.0
-margin_right = 100.0
+margin_left = 100.0
+margin_right = 140.0
 margin_bottom = 31.0
-rect_scale = Vector2( 1.5, 1.5 )
+rect_scale = Vector2( 2, 2 )
 text = "3
 "
 __meta__ = {
@@ -112,16 +112,16 @@ margin_left = 500.0
 margin_top = 400.0
 margin_right = 558.0
 margin_bottom = 417.0
-rect_scale = Vector2( 1.5, 1.5 )
 custom_fonts/font = ExtResource( 2 )
 text = "Nivel"
 script = ExtResource( 9 )
 
 [node name="Label" type="Label" parent="Nivel4"]
-margin_left = 60.0
-margin_right = 100.0
-margin_bottom = 31.0
-rect_scale = Vector2( 1.5, 1.5 )
+margin_left = 100.0
+margin_top = 1.0
+margin_right = 140.0
+margin_bottom = 32.0
+rect_scale = Vector2( 2, 2 )
 text = "4"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -132,16 +132,16 @@ margin_left = 700.0
 margin_top = 400.0
 margin_right = 758.0
 margin_bottom = 417.0
-rect_scale = Vector2( 1.5, 1.5 )
 custom_fonts/font = ExtResource( 2 )
 text = "Nivel"
 script = ExtResource( 8 )
 
 [node name="Label" type="Label" parent="Nivel5"]
-margin_left = 60.0
-margin_right = 100.0
-margin_bottom = 31.0
-rect_scale = Vector2( 1.5, 1.5 )
+margin_left = 100.0
+margin_top = 1.0
+margin_right = 140.0
+margin_bottom = 32.0
+rect_scale = Vector2( 2, 2 )
 text = "5"
 __meta__ = {
 "_edit_use_anchors_": false

@@ -3,4 +3,6 @@
 [ext_resource path="res://Assets/Font/Avayx.ttf" type="DynamicFontData" id=1]
 
 [resource]
+size = 25
+use_filter = true
 font_data = ExtResource( 1 )
