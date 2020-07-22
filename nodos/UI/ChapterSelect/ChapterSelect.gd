@@ -53,6 +53,10 @@ func _physics_process(delta):
 		atras:
 			
 			image_button(3)
+			
+	if Input.is_action_just_pressed("pausa"):
+		
+		get_tree().change_scene(menu)
 
 			
 	if Input.is_action_just_pressed("enter"):

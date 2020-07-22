@@ -51,7 +51,7 @@ func options_interaction():
 		
 		volumenMusica:
 			
-			$Label.add_color_override("font_color", Color(255/255,192/255,203/255))
+			$Label.add_color_override("font_color", Color(float(198)/float(255),float(136)/float(255),float(174)/float(255)))
 			$Label2.add_color_override("font_color", Color(1,1,1))
 			
 			if Input.is_action_just_pressed("player_right") and valorMusica !=10:
@@ -65,7 +65,7 @@ func options_interaction():
 		volumenEfectos:
 			
 			$Label.add_color_override("font_color", Color(1,1,1))
-			$Label2.add_color_override("font_color", Color(255/255,192/255,203/255))
+			$Label2.add_color_override("font_color", Color(float(198)/float(255),float(136)/float(255),float(174)/float(255)))
 			
 			if Input.is_action_just_pressed("player_right") and valorEfectos != 10:
 				valorEfectos+=1
