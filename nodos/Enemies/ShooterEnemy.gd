@@ -9,6 +9,7 @@ const bullet = preload("res://nodos/Enemies/ShooterBullet.tscn")
 
 var invincibility_timer = 0
 export var INVINCIBILTY_TIME = 0.5
+export var DIST_MAX = 400
 
 # Velocidad a la que se acerca el enemigo
 var velocidad = 4000
@@ -38,7 +39,7 @@ func _ready():
 	
 func _process(delta):
 
-	if player != null:
+	if (player != null) and (player.position.distance_to(self.position) < DIST_MAX):
 		rot = ((player.global_position - global_position).angle())
 		if bullet_cooldown_counter >= bullet_cooldown:
 				
