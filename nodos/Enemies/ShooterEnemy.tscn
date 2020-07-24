@@ -1,14 +1,47 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=27 format=2]
 
-[ext_resource path="res://Assets/ShooterEnemy/kisspng-traffic-cone-safety-traffic-cone-5a77b5ac878a15.8191482815177947325552.png" type="Texture" id=1]
+[ext_resource path="res://Assets/ShooterEnemy/Front/front_2.svg" type="Texture" id=1]
 [ext_resource path="res://nodos/Enemies/ShooterEnemy.gd" type="Script" id=2]
 [ext_resource path="res://nodos/Enemies/life.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/ShooterEnemy/Front/front_1.svg" type="Texture" id=4]
+[ext_resource path="res://Assets/ShooterEnemy/Front/front_3.svg" type="Texture" id=5]
+[ext_resource path="res://Assets/ShooterEnemy/Front/front_8.svg" type="Texture" id=6]
+[ext_resource path="res://Assets/ShooterEnemy/Front/front_4.svg" type="Texture" id=7]
+[ext_resource path="res://Assets/ShooterEnemy/Front/front_9.svg" type="Texture" id=8]
+[ext_resource path="res://Assets/ShooterEnemy/Front/front_11.svg" type="Texture" id=9]
+[ext_resource path="res://Assets/ShooterEnemy/Front/front_7.svg" type="Texture" id=10]
+[ext_resource path="res://Assets/ShooterEnemy/Front/front_6.svg" type="Texture" id=11]
+[ext_resource path="res://Assets/ShooterEnemy/Front/front_10.svg" type="Texture" id=12]
+[ext_resource path="res://Assets/ShooterEnemy/Front/front_5.svg" type="Texture" id=13]
+[ext_resource path="res://Assets/ShooterEnemy/Side/side_7.svg" type="Texture" id=14]
+[ext_resource path="res://Assets/ShooterEnemy/Side/side_9.svg" type="Texture" id=15]
+[ext_resource path="res://Assets/ShooterEnemy/Side/side_8.svg" type="Texture" id=16]
+[ext_resource path="res://Assets/ShooterEnemy/Side/side_5.svg" type="Texture" id=17]
+[ext_resource path="res://Assets/ShooterEnemy/Side/side_4.svg" type="Texture" id=18]
+[ext_resource path="res://Assets/ShooterEnemy/Side/side_6.svg" type="Texture" id=19]
+[ext_resource path="res://Assets/ShooterEnemy/Side/side_2.svg" type="Texture" id=20]
+[ext_resource path="res://Assets/ShooterEnemy/Side/side_3.svg" type="Texture" id=21]
+[ext_resource path="res://Assets/ShooterEnemy/Side/side_1.svg" type="Texture" id=22]
+[ext_resource path="res://Assets/ShooterEnemy/Side/side_10.svg" type="Texture" id=23]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 64.2546, 95.8989 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 81.2778, 108.279 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 22 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 18 ), ExtResource( 17 ), ExtResource( 19 ), ExtResource( 14 ), ExtResource( 16 ), ExtResource( 15 ), ExtResource( 23 ) ],
+"loop": true,
+"name": "side",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 1 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 13 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 6 ), ExtResource( 8 ), ExtResource( 12 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "stand",
+"speed": 11.0
+} ]
 
 [node name="ShooterEnemy" type="KinematicBody2D" groups=[
 "Enemy",
@@ -20,7 +53,7 @@ __meta__ = {
 }
 
 [node name="Vida" parent="." instance=ExtResource( 3 )]
-position = Vector2( -175, -250 )
+position = Vector2( -173.247, -250 )
 scale = Vector2( 0.7, 0.7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -31,7 +64,10 @@ shape = SubResource( 1 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 2 )
 
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0.213501, -0.52713 )
-scale = Vector2( 0.155544, 0.151758 )
-texture = ExtResource( 1 )
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -5.07, 0 )
+scale = Vector2( 0.35, 0.35 )
+frames = SubResource( 3 )
+animation = "stand"
+frame = 10
+playing = true
