@@ -46,6 +46,10 @@ var credits = [
 		"Desarrollado en Godot",
 	
 	],[
+		"Programas extras",
+		"Photoshop CS6",
+		"Illustrator"
+	],[
 		"Agradecimientos",
 		"Font: Mathew Roswell"
 	]
