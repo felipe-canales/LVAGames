@@ -69,5 +69,5 @@ position = Vector2( -5.07, 0 )
 scale = Vector2( 0.35, 0.35 )
 frames = SubResource( 3 )
 animation = "stand"
-frame = 10
+frame = 5
 playing = true

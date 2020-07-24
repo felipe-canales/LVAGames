@@ -47,9 +47,7 @@ var credits = [
 	
 	],[
 		"Agradecimientos",
-		"Mi mami",
-		"Mi doggo",
-		"Al jijis"
+		"Font: Mathew Roswell"
 	]
 ]
 
