@@ -22,7 +22,7 @@ var bullet_cooldown_counter = 0
 
 var rng = RandomNumberGenerator.new()
 
-export var life = 5
+export var life = 10
 
 var rot
 

@@ -83,9 +83,16 @@ func _on_DamageArea_body_entered(body:KinematicBody2D):
 	if body != null:
 		if "Enemy" in body.get_groups() and invincibility_timer <= 0:
 			be_damaged()
+		
+	
 			
 func _on_Area2D_body_entered(body):
 	if body != null:
 		if "Player" in body.get_groups():
 			follow = true # Replace with function body.
+	
 
+
+func _on_DamageArea_area_entered(area):
+	if "BulletsEnemy" in area.get_groups():
+			be_damaged()

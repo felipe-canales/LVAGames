@@ -8,6 +8,7 @@ extents = Vector2( 425.364, 221.709 )
 
 [node name="Node2D" type="Area2D" groups=[
 "Bullets",
+"BulletsEnemy",
 ]]
 position = Vector2( -0.689502, 0.117091 )
 scale = Vector2( 0.0771466, -0.127749 )

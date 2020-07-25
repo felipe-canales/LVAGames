@@ -1,7 +1,7 @@
 extends Node2D
 
 var nivel1 = "res://Chapters/Chapter3/level_3-01.tscn"
-var nivel2 = "res://Chapters/Chapter3/level_02-2.tscn"
+var nivel2 = "res://Chapters/Chapter3/level_3-02.tscn"
 var nivel3 = "res://Chapters/Chapter3/level_03-2.tscn"
 var nivel4 = "res://Chapters/Chapter3/level_04-2.tscn"
 var nivel5 = "res://Chapters/Chapter3/level_05-2.tscn"
