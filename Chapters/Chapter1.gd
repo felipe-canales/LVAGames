@@ -9,7 +9,7 @@ var nivel5 = "res://Chapters/Chapter1/level_05.tscn"
 var cutscene1 = "res://Chapters/Chapter1/cutscene1.tscn"
 
 var arreglo_niveles = [nivel1, nivel2, nivel5, nivel3, nivel4]
-var arreglo_cutscenes = [null,null,cutscene1,null,null,null]
+var arreglo_cutscenes = [null,null,null,null,null,null]
 
 var actual_nivel
 var num_nivel = 0

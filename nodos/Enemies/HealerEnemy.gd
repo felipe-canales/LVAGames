@@ -9,6 +9,7 @@ var invincibility_timer = 0
 export var INVINCIBILTY_TIME = 0.5
 
 var follow = false
+var flip = false
 
 # Velocidad a la que se acerca el enemigo
 var velocidad = 4000
@@ -41,12 +42,19 @@ func _physics_process(delta):
 		var dir_x = player.global_position.x - global_position.x
 		var dir_y = player.global_position.y - global_position.y
 		
-		if dir_x*dir_x > dir_y*dir_y:
-			
-			animated_sprite.set_animation("side")
-			
+		if dir_x > abs(dir_y):
+			flip = false
+			update_animation("side")
+			#animated_sprite.set_animation("side")
+		
+		elif -dir_x > abs(dir_y):
+			flip = true
+			update_animation("side")
+			#animated_sprite.set_animation("side")
+		
 		else:
-			animated_sprite.set_animation("stand")
+			update_animation("stand")
+			#animated_sprite.set_animation("stand")
 		
 	
 		movcont_x = dir_x
@@ -91,7 +99,10 @@ func _on_Area2D_body_entered(body):
 		if "Player" in body.get_groups():
 			follow = true # Replace with function body.
 	
-
+func update_animation(animation):
+	if animated_sprite.animation != animation:
+		animated_sprite.animation = animation
+	animated_sprite.set_flip_h(flip)
 
 func _on_DamageArea_area_entered(area):
 	if "BulletsEnemy" in area.get_groups():
